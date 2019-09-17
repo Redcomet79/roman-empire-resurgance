@@ -1,0 +1,200 @@
+﻿##### REM NAME LISTS #####
+### REGULAR DESTROYER NAMES###
+REM_DD_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_DESTROYERS
+
+	for_countries = { REM }
+
+	type = ship
+	ship_types = { ship_hull_light destroyer }			
+
+	#link_numbering_with = { REM_DE_HISTORICAL }				# IMPROVEMENT: Add script like this so that ships don't share same name when it occurs across multiple lists (confirmed that you can make multiple Albatross Mowe, etc. with GER currently)
+
+	prefix = "INF "							
+	fallback_name = "DD-%s"					
+
+	unique = {											# TO CHECK: "unique = { }" working but does not seem to recognize names already in OOBs
+		
+	}
+}
+
+### ESCORT DESTROYER NAMES###
+REM_DE_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_DE
+
+	for_countries = { REM }
+
+	type = ship
+	ship_types = { ship_hull_light destroyer }
+	
+	#link_numbering_with = { REM_DD_HISTORICAL }	
+
+	prefix = "INF "							
+	fallback_name = "DE-%s"
+
+	unique = {
+		
+	}
+}
+
+### LIGHT CRUISER NAMES###
+REM_CL_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CL
+
+	for_countries = { REM }
+
+	type = ship
+	ship_types = { ship_hull_cruiser light_cruiser }
+	
+	prefix = "INF "							
+	fallback_name = "CL-%s"
+
+	unique = {
+		"Carthago" "Gaul" "Hispaniola" "Germania" "Alpina" "Africa" "Aegyptus" "Cyrenaica" "Tripolitna" "Mauretania" "Numidia" 
+			"Cappadocia" "Babylonia" "Thracia" "Dalmatia" "Pannonia" "Dacia" "Aquitania" "Baetica"
+	}
+}
+
+### HEAVY CRUISER NAMES###
+REM_CA_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CA
+
+	for_countries = { REM }
+
+	type = ship
+	ship_types = { ship_hull_cruiser heavy_cruiser }
+	
+	prefix = "INF "							
+	fallback_name = "CA-%s"
+
+	unique = {
+		"Jupiter" "Neptune" "Juno" "Mars" "Venus" "Bellona" "Minerva" "Janus" "Vesta"
+			"Vulcan" "Apollo" "Orcus" "Luna" "Liber" "Diana" "Saturn" "Tellius" "Genius"
+			"Ceres" "Sol" "Vesta"
+	}
+}
+
+### A-A LIGHT CRUISER NAMES###
+REM_CLAA_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CLAA
+
+	for_countries = { REM }
+
+	type = ship
+	ship_types = { ship_hull_cruiser light_cruiser }
+	
+	prefix = "INF "							
+	fallback_name = "CLAA-%s"
+
+	unique = {
+	
+	}
+}
+
+### MINELAYER NAMES###
+REM_MINELAYERS_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_MINELAYERS
+
+	for_countries = { REM }
+
+	type = ship
+	ship_types = { ship_hull_cruiser light_cruiser ship_hull_light destroyer }
+	
+	prefix = "INF "							
+	fallback_name = "CM-%s"
+
+	unique = {
+	
+	}
+}
+
+### BATTLESHIP NAMES ###
+REM_BB_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BB
+
+	for_countries = { REM }
+
+	type = ship
+	ship_types = { ship_hull_heavy battleship }
+	
+	prefix = "INF "							
+	fallback_name = "BB-%s"		
+
+	unique = {
+	 "Neapolis" "Mediolanum" "Virconium" "Ostia"
+            "Brundisium" "Florentia" "Beneventum" "Hippo Regius" "Londinium" "Eburacum"
+            "Arretium" "Carthago Nova" "Capena" "Savona" "Agrippina" "Oenipotum" "Noviomagus" "Tibur" "Verona" "Cornifium" "Cirta" "Hispalis" "Marcianopolis" "Messana" "Sirmium" "Burdigala"
+	}
+}
+
+### BATTLECRUISER NAMES ###
+REM_BC_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BC
+
+	for_countries = { REM }
+
+	type = ship
+	ship_types = { ship_hull_heavy battle_cruiser }
+	
+	prefix = "INF "							
+	fallback_name = "BC-%s"		
+
+	unique = {
+	"Ephesus" "Cydonia" "Salamis" "Paphus" "Iconium" "Antioch" "Sinope" "Edessa" "Palmyra" "Emesa" "Pisae" "Tarentum" "Rhegium" "Aquilea"
+	}
+}
+
+### AIRCRAFT CARRIER NAMES ###
+REM_CV_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CARRIERS
+
+	for_countries = { REM }
+
+	type = ship
+	ship_types = { ship_hull_carrier carrier }
+	
+	prefix = "INF "							
+	fallback_name = "CV-%s"	
+
+	unique = {
+		"Romulus" "Remus" "Africanus" "Augustus" "Scipio" "Aetius" "Agrippa" "Macedonicus" "Constantine" "Pompey" "Julius Ceasar" "Aurelius" "Trajan"
+	}
+}
+
+### LIGHT CARRIER NAMES ###
+REM_CVL_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CVL
+
+	for_countries = { REM }
+
+	type = ship
+	ship_types = { ship_hull_carrier carrier }
+	
+	prefix = "INF "							
+	fallback_name = "CVL-%s"	
+
+	unique = {
+		
+	}
+}
+
+### SUBMARINES ###
+REM_SS_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_SUBMARINES
+
+	for_countries = { REM }
+
+	type = ship
+	ship_types = { ship_hull_submarine submarine }
+	
+	prefix = "INF "							
+	fallback_name = "S-%s"	
+
+	unique = {
+	
+	}
+}
+
+
+
+

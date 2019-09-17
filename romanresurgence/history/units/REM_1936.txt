@@ -1,0 +1,306 @@
+division_template = {
+	name = "Legio Peditum"
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+        infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+        infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+
+	support = {
+					recon = {x = 0 y = 0}
+					
+	}
+}
+division_template = {
+	name = "Legio Armatae Plaustrum"
+
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+        light_armor = { x = 1 y = 0 }
+		light_armor = { x = 1 y = 1 }
+		motorized = { x = 2 y = 0 }
+        motorized = { x = 2 y = 1 }
+	}
+	support = {
+        recon = { x = 0 y = 0 }
+				
+	}
+}
+division_template = {
+	name = "Legio Vehiculum Peditum"
+	regiments = {
+		motorized = { x = 0 y = 0 }
+	    motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		motorized = { x = 2 y = 0 }
+	    motorized = { x = 2 y = 1 }
+		motorized = { x = 2 y = 2 }
+	}
+	support = {
+        recon = { x = 0 y = 0 }
+				
+	}
+	priority = 2
+}
+division_template = {
+	name = "Legio Praetoria"
+	regiments = {
+		motorized = { x = 0 y = 0 }
+	    motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		motorized = { x = 2 y = 0 }
+	    motorized = { x = 2 y = 1 }
+		motorized = { x = 2 y = 2 }
+	}
+	support = {
+        recon = { x = 0 y = 0 }
+				
+	}
+	priority = 1
+}
+division_template = {
+	name = "Legio Peditum Montem"
+	regiments = {
+		mountaineers = { x = 0 y = 0 }
+	    mountaineers = { x = 0 y = 1 }
+		mountaineers = { x = 0 y = 2 }
+		mountaineers = { x = 1 y = 0 }
+		mountaineers = { x = 1 y = 1 }
+		mountaineers = { x = 1 y = 2 }
+	}
+	support = {
+        recon = { x = 0 y = 0 }
+				
+	}
+}
+division_template = {
+	name = "Legio Equites"
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+        cavalry = { x = 0 y = 1 }
+        cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+	}
+	support = {
+	    recon = { x = 0 y = 0 }
+
+	}
+}
+units = {
+
+division= {
+  name = "1. Legio Peditum"
+  location = 11969
+  division_template = "Legio Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "2. Legio Peditum"
+  location = 11969
+  division_template = "Legio Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "3. Legio Peditum"
+  location = 1149
+  division_template = "Legio Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "4. Legio Peditum"
+  location = 1149
+  division_template = "Legio Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "5. Legio Peditum"
+  location = 10074
+  division_template = "Legio Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "6. Legio Peditum"
+  location = 10074
+  division_template = "Legio Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "7. Legio Peditum"
+  location = 10074
+  division_template = "Legio Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "8. Legio Peditum"
+  location = 10074
+  division_template = "Legio Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "9. Legio Peditum"
+  location = 9904
+  division_template = "Legio Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "10. Legio Peditum"
+  location = 9904
+  division_template = "Legio Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "11. Legio Peditum"
+  location = 9904
+  division_template = "Legio Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "12. Legio Peditum"
+  location = 9904
+  division_template = "Legio Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "13. Legio Peditum"
+  location = 11773
+  division_template = "Legio Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "14. Legio Peditum"
+  location = 11773
+  division_template = "Legio Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "15. Legio Peditum"
+  location = 11773
+  division_template = "Legio Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "16. Legio Peditum"
+  location = 11773
+  division_template = "Legio Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "17. Legio Peditum"
+  location = 11773
+  division_template = "Legio Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "18. Legio Peditum"
+  location = 11773
+  division_template = "Legio Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "19. Legio Peditum"
+  location = 11773
+  division_template = "Legio Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "20. Legio Peditum"
+  location = 11773
+  division_template = "Legio Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "21. Legio Peditum"
+  location = 11969
+  division_template = "Legio Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "22. Legio Peditum"
+  location = 1149
+  division_template = "Legio Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "23. Legio Peditum"
+  location = 11969
+  division_template = "Legio Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "24. Legio Peditum"
+  location = 1149
+  division_template = "Legio Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "1. Legio Praetoria 'Mars' Children'"
+  location = 1149
+  division_template = "Legio Praetoria"
+  start_experience_factor = 1
+}
+division= {
+  name = "2. Legio Praetoria"
+  location = 1149
+  division_template = "Legio Praetoria"
+  start_experience_factor = 1
+}
+division= {
+  name = "3. Legio Praetoria"
+  location = 1149
+  division_template = "Legio Praetoria"
+  start_experience_factor = 1
+}
+division= {
+  name = "4. Legio Praetoria ''"
+  location = 1149
+  division_template = "Legio Praetoria"
+  start_experience_factor = 1
+}
+navy = {
+	name = "Classis I Mitsensis"
+	base = 11751	# Latium
+	location = 11751
+	ship = { name = "INF Crassipes" definition = carrier equipment = { carrier_1 = { amount = 1 owner = REM } }
+			air_wings = {
+
+			}
+  }
+	ship = { name = "INF Aculeo" definition = carrier equipment = { carrier_1 = { amount = 1 owner = REM } }
+					air_wings = {
+						
+					}
+	}
+	ship = { name = "INF Ravenna" definition = battleship equipment = { battleship_1 = { amount = 1 owner = REM } } }
+	ship = { name = "INF Cremona" definition = battleship equipment = { battleship_1 = { amount = 1 owner = REM } } }
+	ship = { name = "INF Constantinople" definition = battle_cruiser equipment = { battle_cruiser_1 = { amount = 1 owner = REM } } }
+	ship = { name = "INF Ops" definition = heavy_cruiser equipment = { heavy_cruiser_ = { amount = 1 owner = REM } } }
+	ship = { name = "INF Novensides" definition = heavy_cruiser  equipment = { heavy_cruiser_1 = { amount = 1 owner = REM } } }
+	ship = { name = "INF Pales" definition = heavy_cruiser  equipment = { heavy_cruiser_1 = { amount = 1 owner = REM } } }
+	ship = { name = "INF Latium" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = REM } } }
+	ship = { name = "INF Herculaneum" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = REM } } }
+	ship = { name = "INF Equite" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REM } } }
+	ship = { name = "INF Admissus" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REM } } }
+	ship = { name = "INF Cursus" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REM } } }
+	ship = { name = "INF Ungulus" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REM } } }
+	ship = { name = "INF Solea" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REM } } }
+	ship = { name = "INF Adducantur" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REM } } }
+	ship = { name = "INF Hasta" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REM } } }
+	ship = { name = "INF Iuba" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = REM } } }
+}
+
+}

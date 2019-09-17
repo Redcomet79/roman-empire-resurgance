@@ -1,0 +1,312 @@
+ocus = {
+		id = REM_Legitimization
+		text = "Seek Outside Legitimization"
+		icon = GFX_goal_generic_intelligence_exchange
+		cost = 20.00
+		x = 21
+		y = 0
+		completion_reward = {
+	
+			REM = {
+	country_event = roman.23
+
+			}
+				
+		}
+
+	}
+	focus = {
+		id = "Court the Axis"
+		icon = GFX_goal_generic_dangerous_deal
+		cost = 10.00
+		prerequisite = {
+			focus = REM_Legitimization
+		}
+		mutually_exclusive = {
+			focus = "Found a New Faction"
+			focus = "Join the Allies"
+		}
+		x = 19
+		y = 1
+		completion_reward = {
+	
+			GER = { 
+			add_to_faction = REM 
+			}
+
+		}
+
+	}
+	focus = {
+		id = "Join the Allies"
+		icon = GFX_goal_generic_improve_relations
+		cost = 10.00
+		prerequisite = {
+			focus = REM_Legitimization
+		}
+		mutually_exclusive = {
+			focus = "Found a New Faction"
+			focus = "Court the Axis"
+		}
+		x = 23
+		y = 1
+		completion_reward = {
+
+			ENG = {
+
+			add_to_faction = REM
+
+			}
+
+		}
+
+	}
+	focus = {
+		id = "Fortify the East"
+		icon = GFX_goal_generic_fortify_city
+		cost = 15.00
+		prerequisite = {
+			focus = "Join the Allies"
+		}
+		x = 25
+		y = 3
+		completion_reward = {
+			custom_effect_tooltip = "Fortify the Austrian Border against German Intrusion"
+				hidden_effect = {
+			39 = {
+				
+					add_building_construction = {
+						type = bunker
+						level = 7
+						province = 6673
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 7
+						province = 9630
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 7
+						province = 11615
+						instant_build = yes
+					}
+				
+			}
+			
+			160 = {
+				add_building_construction = {
+					type = bunker
+					level = 7
+					province = 3657
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 7
+					province = 9613
+					instant_build = yes
+				}
+			}
+			736 = {
+				add_building_construction = {
+					type = bunker
+					level = 7
+					province = 11595
+					instant_build = yes
+				}
+				
+			}
+			102 = {
+				add_building_construction = {
+					type = bunker
+					level = 7
+					province = 3631
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 7
+					province = 11612
+					instant_build = yes
+				}
+					add_building_construction = {
+					type = bunker
+					level = 7
+					province = 9596
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 7
+					province = 596
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 7
+					province = 665
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 7
+					province = 6672
+					instant_build = yes
+				}
+			}}
+		}}
+	
+			#Founding A New Faction, add two to three more branches.
+	focus = {
+		id = "Found a New Faction"
+		icon = GFX_goal_generic_demand_territory
+		cost = 10.00
+		prerequisite = {
+			focus = REM_Legitimization
+		}
+		mutually_exclusive = {
+			focus = "Join the Allies"
+			focus = "Court the Axis"
+		}
+		x = 21
+		y = 1
+		completion_reward = {
+
+			
+				add_national_unity = 0.15
+			
+
+		}
+
+	
+	}
+	focus = {
+		id = "New World Diplomacy"
+		icon = GFX_goal_generic_major_alliance
+		cost = 10.00
+		prerequisite = {
+			focus = "Found a New Faction"
+		}
+		x = 21
+		y = 3
+		completion_reward = {
+							
+		}
+
+	}
+	focus = {
+		id = "Alliance of the Two Eagles"
+		icon = GFX_goal_molotov_ribbentrop_pact
+		cost = 10.00
+		prerequisite = {
+			focus = "New World Diplomacy"
+		}
+		x = 21
+		y = 4
+		completion_reward = {
+					
+			REM = {
+
+				create_faction = "Alliance_of_the_Twin_Eagles"
+
+				add_to_faction = USA
+
+			}
+				
+		}
+
+	}
+	focus = {
+		id = "The Monroe Addition"
+		icon = GFX_goal_generic_national_unity
+		cost = 10.00
+		prerequisite = {
+			focus = "Alliance of the Two Eagles"
+		}
+		x = 21
+		y = 5
+		completion_reward = {
+					
+			REM = {
+							
+				add_to_faction = ARG
+
+				add_to_faction = PAR
+
+				add_to_faction = BOL
+
+				add_to_faction = PRU
+
+				add_to_faction = BRA
+	
+				add_to_faction = VEN
+
+				add_to_faction = ARG
+
+				add_to_faction = URG
+	
+				add_to_faction = CHL
+
+				add_to_faction = COL
+	
+				add_to_faction = ECU
+
+				add_to_faction = CUB
+		
+				add_to_faction = MEX
+	
+				add_to_faction = DOM
+	
+				add_to_faction = HAI
+	
+				add_to_faction = HON
+	
+				add_to_faction = PAN
+
+				add_to_faction = NIC
+
+				add_to_faction = GUA
+	
+			}
+				
+		}
+
+	}
+	focus = {
+		id = "Call Constitutional Conference"
+		icon = GFX_goal_support_fascism
+		cost = 4.00
+		x = 29
+		y = 0
+		completion_reward = {
+
+		set_national_unity = 0.45
+
+		set_party_name = {ideology = democratic
+	long_name = "Federal Senate and people of Rome"
+ name = FSPQR
+}
+	
+		set_party_name = {ideology = neutrality
+	long_name = "Roman Imperial Loyalists"
+ name = Loyalists
+}
+					
+		set_party_name = {
+ideology = communism  long_name = "Roman National Workers Party"
+ name = RNWP
+}
+					
+		set_party_name = {
+ideology = fascism long_name = "Roman National Socialist Advocacy Party" name = RNSAP}
+				
+		REM = {
+				country_event = { id = roman.34 }
+
+			}
+		}
+
+	}

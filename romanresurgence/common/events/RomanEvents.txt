@@ -1,0 +1,1418 @@
+add_namespace = roman
+
+
+
+
+# Roman Empire Demands Mussolini's surrender
+country_event = {
+	id = roman.1
+	title = roman.1.t
+	desc = roman.1.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { # Accept
+		name = Et Tu, Crassipes?!
+		ai_chance = { factor = 90 }
+		REM = {
+			country_event = { id = roman.2 }
+			set_major = yes
+		}
+	}
+	#option = { # Refuse
+	#	name = HA! Your Feeble Agents have failed to reach me! Die!
+    	#ai_chance = { factor = 20 }
+        #
+        #		ITA = {
+        #			country_event = { id = roman.3 }
+        #		}
+        #	}
+}
+# Mussolini Refuses, Prepares for War
+country_event = {
+	id = roman.3
+	title = roman.3.t
+	desc = roman.3.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Damn! The Plan Has Failed! Time for Plan B!"
+    declare_war_on = {
+    target = REM
+    type = annex_everything
+	   }
+  }
+}
+# Mussolini Surrenders to the Emperor, Is Executed
+country_event = {
+	id = roman.2
+	title = roman.2.t
+	desc = roman.2.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = {
+		name = "A Date That Shall Live In Infamy."
+		add_threat = 4
+		736= {
+			if = {
+				limit = { is_owned_by = ITA }
+				add_core_of = REM
+			}
+		}
+		160 = {
+			if = {
+				limit = { is_owned_by = ITA }
+				add_core_of = REM
+			}
+		}
+		39 = {
+			if = {
+				limit = { is_owned_by = ITA }
+				add_core_of = REM
+			}
+		}
+		159 = {
+			if = {
+				limit = { is_owned_by = ITA }
+				add_core_of = REM
+			}
+		}
+		158 = {
+			if = {
+				limit = { is_owned_by = ITA }
+				add_core_of = REM
+			}
+		}
+		161 = {
+			if = {
+				limit = { is_owned_by = ITA }
+				add_core_of = REM
+			}
+		}
+		157 = {
+			if = {
+				limit = { is_owned_by = ITA }
+				add_core_of = REM
+			}
+		}
+		162 = {
+			if = {
+				limit = { is_owned_by = ITA }
+				add_core_of = REM
+			}
+		}
+		273 = {
+			if = {
+				limit = { is_owned_by = ITA }
+				add_core_of = REM
+			}
+		}
+		661 = {
+			if = {
+				limit = { is_owned_by = ITA }
+				add_core_of = REM
+			}
+		}
+		448 = {
+			if = {
+				limit = { is_owned_by = ITA }
+				add_core_of = REM
+			}
+		}
+		449 = {
+			if = {
+				limit = { is_owned_by = ITA }
+				add_core_of = REM
+			}
+		}
+		662 = {
+			if = {
+				limit = { is_owned_by = ITA }
+				add_core_of = REM
+			}
+		}
+		663 = {
+			if = {
+				limit = { is_owned_by = ITA }
+				add_core_of = REM
+			}
+		}
+		450 = {
+			if = {
+				limit = { is_owned_by = ITA }
+				add_core_of = REM
+			}
+		}
+		451 = {
+			if = {
+				limit = { is_owned_by = ITA }
+				add_core_of = REM
+			}
+		}
+		559 = {
+			if = {
+				limit = { is_owned_by = ITA }
+				add_core_of = REM
+			}
+		}
+		550 = {
+			if = {
+				limit = { is_owned_by = ITA }
+				add_core_of = REM
+			}
+		}
+
+		annex_country = { target = ITA transfer_troops = yes }
+		set_major = yes
+		}
+	}
+country_event = {
+	id = roman.4
+	title = roman.4.t
+	desc = roman.4.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+  trigger{
+  tag = REM
+  }
+
+	option = {
+		name = "Rome Shall Rise Once Again! Hail the last Ceasar!"
+    hidden_effect ={
+    ITA= {
+			country_event = { id = roman.1 }
+      }
+      }
+		}
+	}
+	country_event = {
+		id = roman.5
+		title = roman.5.t
+		desc = roman.5.d
+		picture = GFX_report_event_generic_read_write
+
+		is_triggered_only = yes
+	  trigger{
+	  tag = REM
+	  }
+
+		option = {
+			name = "Foreign forces should vacate our lands immediately!"
+	    hidden_effect ={
+	    ENG= {
+				country_event = { id = roman.6 }
+	      }
+	      }
+			}
+		}
+		country_event = {
+			id = roman.6
+			title = roman.6.t
+			desc = roman.6.d
+			picture = GFX_report_event_stalin_01
+
+			is_triggered_only = yes
+
+			option = { # Accept
+				name = As with Germany, we must acknowledge our mistakes and allow them their territory.
+				ai_chance = { factor = 95 }
+				REM = {
+					add_threat = 5
+					country_event = { id = roman.8 }
+				}
+			}
+			option = { # Refuse
+				name = Our power in europe must not be threatened, and they have given us no choice! WAR!
+		    	ai_chance = { factor = 5 }
+
+				ENG = {
+					country_event = { id = roman.7 }
+				}
+			}
+		}
+		# Britain Refuses, Prepares for War
+		country_event = {
+			id = roman.7
+			title = roman.7.t
+			desc = roman.7.d
+			picture = GFX_report_event_stalin_02
+
+			is_triggered_only = yes
+
+			option = {
+				name = "Damn the British!"
+		    declare_war_on = {
+		    target = REM
+		    type = annex_everything
+			   }
+		  }
+		}
+		# Gibraltar Handed over to The Emperor
+		country_event = {
+			id = roman.8
+			title = roman.8.t
+			desc = roman.8.d
+			picture = GFX_report_event_generic_read_write
+
+			is_triggered_only = yes
+
+			option = {
+				name = "This will not be the last time those barbarians retreat before us..."
+				REM ={
+
+		118 = {
+			if = {
+				limit = { is_owned_by = ENG }
+				add_core_of = REM
+				
+			}
+		}
+				transfer_state = 118
+
+					}
+				}
+			}
+
+
+	country_event = {
+		id = roman.10
+		title = roman.10.t
+		desc = roman.10.d
+		picture = GFX_report_event_generic_read_write
+
+		is_triggered_only = yes
+	  trigger{
+	  tag = REM
+	  }
+
+		option = {
+			name = "We must Prevent military action in the Mediterranean, or else our whole Empire is at risk."
+	    hidden_effect ={
+	    ENG= {
+				country_event = { id = roman.11 }
+	      }
+	      }
+			}
+		}
+		country_event = {
+			id = roman.11
+			title = roman.11.t
+			desc = roman.11.d
+			picture = GFX_report_event_stalin_01
+
+			is_triggered_only = yes
+
+			option = { # Accept
+				name = We must avoid undue conflicts in this treacherous time.
+				ai_chance = { factor = 80 }
+				add_threat = 5
+				REM = {
+					country_event = { id = roman.13 }
+				}
+			}
+			option = { # Refuse
+				name = Suez cannot be surrendered
+		    	ai_chance = { factor = 20 }
+
+				ENG = {
+					country_event = { id = roman.12 }
+				}
+			}
+		}
+		# Britain Refuses, Prepares for War
+		country_event = {
+			id = roman.12
+			title = roman.12.t
+			desc = roman.12.d
+			picture = GFX_report_event_stalin_02
+
+			is_triggered_only = yes
+
+			option = {
+				name = "We Must Protect Suez!"
+		    declare_war_on = {
+		    target = REM
+		    type = annex_everything
+			   }
+		  }
+		}
+		# Suez Handed over to The Emperor
+		country_event = {
+			id = roman.13
+			title = roman.13.t
+			desc = roman.13.d
+			picture = GFX_report_event_generic_read_write
+
+			is_triggered_only = yes
+
+			option = {
+				name = "This Means we can demand so much more..."
+		REM ={
+		453= {
+			if = {
+				limit = { is_owned_by = ENG }
+				add_core_of = REM
+			}
+		}
+		transfer_state = 453
+		446 = {
+			if = {
+				limit = { is_owned_by = ENG }
+				add_core_of = REM
+			}
+		}
+		transfer_state = 446
+		457 = {
+			if = {
+				limit = { is_owned_by = ENG }
+				add_core_of = REM
+			}
+		}
+		transfer_state = 457
+
+					}
+				}
+			}
+#Yugoslavia demanded
+	country_event = {
+		id = roman.14
+		title = roman.14.t
+		desc = roman.14.d
+		picture = GFX_report_event_generic_read_write
+
+		is_triggered_only = yes
+	  trigger{
+	  tag = REM
+	  }
+
+		option = {
+			name = "Yugoslavia is now ours to take!"
+			add_threat = 5
+	    hidden_effect ={
+	    YUG= {
+				country_event = { id = roman.15 }
+	      }
+	      }
+			}
+		}
+		country_event = {
+			id = roman.15
+			title = roman.15.t
+			desc = roman.15.d
+			picture = GFX_report_event_stalin_01
+
+			is_triggered_only = yes
+
+			option = { # Accept
+				name = We submit to our true rulers.
+				ai_chance = { factor = 95 }
+				REM = {
+					country_event = { id = roman.17 }
+				}
+			}
+			option = { # Refuse
+				name = NEVER!
+		    	ai_chance = { factor = 5 }
+
+				YUG = {
+					country_event = { id = roman.16 }
+				}
+			}
+		}
+		# yugoslavia Refuses, Prepares for War
+		country_event = {
+			id = roman.16
+			title = roman.16.t
+			desc = roman.16.d
+			picture = GFX_report_event_stalin_02
+
+			is_triggered_only = yes
+
+			option = {
+				name = "We Must Protect Ourselves!"
+		    declare_war_on = {
+		    target = REM
+		    type = annex_everything
+			   }
+			REM = {
+				102 = {
+			if = {
+				limit = { is_owned_by = YUG }
+				add_core_of = REM
+			}
+		}
+		109 = {
+			if = {
+				limit = { is_owned_by = YUG }
+				add_core_of = REM
+			}
+		}
+		103 = {
+			if = {
+				limit = { is_owned_by = YUG }
+				add_core_of = REM
+			}
+		}
+		104 = {
+			if = {
+				limit = { is_owned_by = YUG }
+				add_core_of = REM
+			}
+		}
+		45 = {
+			if = {
+				limit = { is_owned_by = YUG }
+				add_core_of = REM
+			}
+		}
+		105 = {
+			if = {
+				limit = { is_owned_by = YUG }
+				add_core_of = REM
+			}
+		}
+		106 = {
+			if = {
+				limit = { is_owned_by = YUG }
+				add_core_of = REM
+			}
+		}
+		107 = {
+			if = {
+				limit = { is_owned_by = YUG }
+				add_core_of = REM
+			}
+		}
+		108 = {
+			if = {
+				limit = { is_owned_by = YUG }
+				add_core_of = REM
+			}
+		}
+			}
+		  }
+		}
+		# yugoslavia Handed over to The Emperor
+		country_event = {
+			id = roman.17
+			title = roman.17.t
+			desc = roman.17.d
+			picture = GFX_report_event_generic_read_write
+
+			is_triggered_only = yes
+
+			option = {
+				name = "Not hide nor hair of Allied politicians..."
+		REM ={
+		102 = {
+			if = {
+				limit = { is_owned_by = YUG }
+				add_core_of = REM
+			}
+		}
+		109 = {
+			if = {
+				limit = { is_owned_by = YUG }
+				add_core_of = REM
+			}
+		}
+		103 = {
+			if = {
+				limit = { is_owned_by = YUG }
+				add_core_of = REM
+			}
+		}
+		104 = {
+			if = {
+				limit = { is_owned_by = YUG }
+				add_core_of = REM
+			}
+		}
+		45 = {
+			if = {
+				limit = { is_owned_by = YUG }
+				add_core_of = REM
+			}
+		}
+		105 = {
+			if = {
+				limit = { is_owned_by = YUG }
+				add_core_of = REM
+			}
+		}
+		106 = {
+			if = {
+				limit = { is_owned_by = YUG }
+				add_core_of = REM
+			}
+		}
+		107 = {
+			if = {
+				limit = { is_owned_by = YUG }
+				add_core_of = REM
+			}
+		}
+		108 = {
+			if = {
+				limit = { is_owned_by = YUG }
+				add_core_of = REM
+			}
+		}
+
+		annex_country = { target = YUG transfer_troops = yes }
+
+					}
+				}
+			}
+#Demand Albania Submits
+country_event = {
+		id = roman.18
+		title = roman.18.t
+		desc = roman.18.d
+		picture = GFX_report_event_generic_read_write
+
+		is_triggered_only = yes
+	  trigger{
+	  tag = REM
+	  }
+
+		option = {
+			name = "Albania should join in our glory"
+			add_threat = 2
+	    hidden_effect ={
+	    ALB= {
+				country_event = { id = roman.19 }
+	      }
+	      }
+			}
+		}
+		country_event = {
+			id = roman.19
+			title = roman.19.t
+			desc = roman.19.d
+			picture = GFX_report_event_stalin_01
+
+			is_triggered_only = yes
+
+			option = { # Accept
+				name = We will join in the Glory of the Roman Empire.
+				ai_chance = { factor = 90 }
+				REM = {
+					country_event = { id = roman.21 }
+				}
+			}
+			option = { # Refuse
+				name = NEVER!
+		    	ai_chance = { factor = 10 }
+
+				ALB = {
+					country_event = { id = roman.20 }
+				}
+			}
+		}
+		# Albania Refuses, Prepares for War
+		country_event = {
+			id = roman.20
+			title = roman.20.t
+			desc = roman.20.d
+			picture = GFX_report_event_stalin_01
+
+			is_triggered_only = yes
+
+			option = {
+				name = "We Must Protect Ourselves!"
+		    declare_war_on = {
+		    target = REM
+		    type = annex_everything
+			   }
+			REM = {
+				108 = {
+			if = {
+				limit = { is_owned_by = ALB }
+				add_core_of = REM
+				}
+			}
+			}
+		  }
+		}
+		# Albania Handed over to The Emperor
+		country_event = {
+			id = roman.21
+			title = roman.21.t
+			desc = roman.21.d
+			picture = GFX_report_event_generic_read_write
+
+			is_triggered_only = yes
+
+			option = {
+				name = "Zog Submits to the true Rulers of Europa"
+			REM ={
+			108 = {
+			if = {
+				limit = { is_owned_by = ALB }
+				add_core_of = REM
+				}
+			}
+
+			annex_country = { target = ALB transfer_troops = yes }
+					}
+				}
+			}
+#Bulgaria is demanded
+country_event = {
+		id = roman.22
+		title = roman.22.t
+		desc = roman.22.d
+		picture = GFX_report_event_generic_read_write
+
+		is_triggered_only = yes
+	  trigger{
+	  tag = REM
+	  }
+
+		option = {
+			name = "Europe Must now fall to us as well!"
+			add_threat = 3
+	    hidden_effect ={
+	    BUL= {
+				country_event = { id = roman.23 }
+	      }
+	      }
+			}
+		}
+		#the demanded nation chooses war or submission
+		country_event = {
+			id = roman.23
+			title = roman.23.t
+			desc = roman.23.d
+			picture = GFX_report_event_stalin_01
+
+			is_triggered_only = yes
+
+			option = { # Accept
+				name = We submit to our true rulers.
+				ai_chance = { factor = 60 }
+				REM = {
+					country_event = { id = roman.25 }
+				}
+			}
+			option = { # Refuse
+				name = NEVER!
+		    	ai_chance = { factor = 60 }
+
+				BUL = {
+					country_event = { id = roman.24 }
+				}
+			}
+		}
+		# Bulgaria Refuses, Prepares for War
+		country_event = {
+			id = roman.24
+			title = roman.24.t
+			desc = roman.24.d
+			picture = GFX_report_event_stalin_02
+
+			is_triggered_only = yes
+
+			option = {
+				name = "We Must Protect Ourselves!"
+		    declare_war_on = {
+		    target = REM
+		    type = annex_everything
+			   }
+			REM = {
+				48 = {
+			if = {
+				limit = { is_owned_by = BUL }
+				add_core_of = REM
+				}
+			}
+			211 = {
+			if = {
+				limit = { is_owned_by = BUL }
+				add_core_of = REM
+				}
+			}
+			212 = {
+			if = {
+				limit = { is_owned_by = BUL }
+				add_core_of = REM
+				}
+			}
+			}
+		  }
+		}
+		# Bulgaria Handed over to The Emperor
+		country_event = {
+			id = roman.25
+			title = roman.25.t
+			desc = roman.25.d
+			picture = GFX_report_event_generic_read_write
+
+			is_triggered_only = yes
+
+			option = {
+				name = "Bulgaria Submits to the true Rulers of Europa"
+			REM ={
+			48 = {
+			if = {
+				limit = { is_owned_by = BUL }
+				add_core_of = REM
+				}
+			}
+			211 = {
+			if = {
+				limit = { is_owned_by = BUL }
+				add_core_of = REM
+				}
+			}
+			212 = {
+			if = {
+				limit = { is_owned_by = BUL }
+				add_core_of = REM
+				}
+			}
+
+			annex_country = { target = BUL transfer_troops = yes }
+
+					}
+				}
+			}
+#Rome Demands Greek Submission
+country_event = {
+		id = roman.26
+		title = roman.26.t
+		desc = roman.26.d
+		picture = GFX_report_event_generic_read_write
+
+		is_triggered_only = yes
+	  trigger{
+	  tag = REM
+	  }
+
+		option = {
+			name = "with this, our preparations are complete..."
+	    hidden_effect ={
+	    GRE= {
+				country_event = { id = roman.27 }
+	      }
+	      }
+			}
+		}
+#Greek Referendum
+	country_event = {
+			id = roman.27
+			title = roman.27.t
+			desc = roman.28.d
+			picture = GFX_report_event_stalin_01
+
+			is_triggered_only = yes
+
+			option = { # Accept
+				name = We will join the new Romans.
+				ai_chance = { factor = 99 }
+				REM = {
+					country_event = { id = roman.26 }
+				}
+			}
+			option = { # Refuse
+				name = NEVER!
+		    	ai_chance = { factor = 1 }
+
+				BUL = {
+					country_event = { id = roman.666 }
+				}
+			}
+		}
+		# Bulgaria Refuses, Prepares for War
+		country_event = {
+			id = roman.28
+			title = roman.28.t
+			desc = roman.28.d
+			picture = GFX_report_event_stalin_02
+
+			is_triggered_only = yes
+
+			option = {
+				name = "We Must Protect Ourselves!"
+		    declare_war_on = {
+		    target = REM
+		    type = annex_everything
+			   }
+			REM = {
+			48 = {
+			if = {
+				limit = { is_owned_by = BUL }
+				add_core_of = REM
+				}
+			}
+			211 = {
+			if = {
+				limit = { is_owned_by = BUL }
+				add_core_of = REM
+				}
+			}
+			212 = {
+			if = {
+				limit = { is_owned_by = BUL }
+				add_core_of = REM
+				}
+			}
+			}
+		  }
+		}
+		# Greece Handed over to The Emperor
+		country_event = {
+			id = roman.666
+			title = roman.666.t
+			desc = roman.666.d
+			picture = GFX_report_event_generic_read_write
+
+			is_triggered_only = yes
+
+			option = {
+				name = "Bulgaria Submits to the true Rulers of Europa"
+			REM ={
+			185 = {
+			if = {
+				limit = { is_owned_by = GRE }
+				add_core_of = REM
+				}
+			}
+			47 = {
+			if = {
+				limit = { is_owned_by = GRE }
+				add_core_of = REM
+				}
+			}
+			731 = {
+			if = {
+				limit = { is_owned_by = GRE }
+				add_core_of = REM
+				}
+			}
+			184 = {
+			if = {
+				limit = { is_owned_by = GRE }
+				add_core_of = REM
+				}
+			}
+			186 = {
+			if = {
+				limit = { is_owned_by = GRE }
+				add_core_of = REM
+				}
+			}
+			182 = {
+			if = {
+				limit = { is_owned_by = GRE }
+				add_core_of = REM
+				}
+			}
+			187 = {
+			if = {
+				limit = { is_owned_by = GRE }
+				add_core_of = REM
+				}
+			}
+			annex_country = { target = GRE transfer_troops = yes }
+
+					}
+				}
+			}
+		#Rome Invades Turkey
+country_event = {
+		id = roman.29
+		title = roman.29.t
+		desc = roman.29.d
+		picture = GFX_report_event_generic_read_write
+
+		is_triggered_only = yes
+	  trigger{
+	  tag = REM
+	  }
+
+		option = {
+			name = "We Will Reclaim Constantinople!"
+	    
+	    REM= {
+				country_event = { id = roman.30 }
+	      
+	      }
+			}
+		}
+#This Is An Invasion.
+		country_event = {
+			id = roman.30
+			title = roman.30.t
+			desc = roman.30.d
+			picture = GFX_report_event_stalin_01
+
+			is_triggered_only = yes
+
+
+			option = { # Refuse
+				name = "Damn you, Roman Madman!"
+		    	ai_chance = { factor = 100 }
+
+				TUR = {
+					country_event = { id = roman.31 }
+				}
+			}
+		}
+		# Romania Prepares for War.
+		country_event = {
+			id = roman.31
+			title = roman.31.t
+			desc = roman.31.d
+			picture = GFX_report_event_stalin_02
+
+			is_triggered_only = yes
+
+			option = {
+				name = "We Refuse any condtions! Romania will fight for it's freedom!"
+		    declare_war_on = {
+		    target = REM
+		    type = annex_everything
+			   }
+			REM = {
+				add_state_claim = 47
+				add_state_claim = 182
+				add_state_claim = 184
+				add_state_claim = 185
+				add_state_claim = 186
+				add_state_claim = 187
+				add_state_claim = 731
+			}
+		  }
+		}
+
+
+
+country_event = {
+			id = roman.9
+			title = roman.9.t
+			desc = roman.9.d
+			picture = GFX_report_event_generic_read_write
+
+			fire_only_once = yes
+			trigger = {
+			date = 1936.4.1
+			}
+
+			option = {
+				name = "Thanks For playing!"
+
+
+				}
+			}
+			country_event = {
+						id = roman.32
+						title = roman.32.t
+						desc = roman.32.d
+						picture = GFX_report_event_generic_read_write
+
+						fire_only_once = yes
+						is_triggered_only = yes
+
+						option = {
+							name = "We Should take every opportunity!"
+							REM= {
+								country_event = { id = roman.33 }
+					      }
+
+							}
+							option = {
+								name = "Nah, we don't need help."
+
+
+								}
+						}
+						country_event = {
+									id = roman.33
+									title = roman.33.t
+									desc = roman.33.d
+									picture = GFX_report_event_generic_read_write
+
+									fire_only_once = yes
+									is_triggered_only = yes
+
+									option = {
+										name = "The Legions are finally well equipped!"
+										GER = {
+											create_production_license = { target = REM	cost_factor = 1.0 equipment = {	type = light_tank_equipment_0 version = 0 }}
+											create_production_license = { target = REM	cost_factor = 1.0 equipment = {	type = infantry_equipment_1 version = 0 }}
+											
+										}
+										USA = {
+											create_production_license = { target = REM	cost_factor = 1.0 equipment = {	type = infantry_equipment_0 version = 0 }}
+										}
+										ENG = {
+											create_production_license = { target = REM	cost_factor = 1.0 equipment = {	type = cv_fighter_equipment_0 version = 0 }}
+											create_production_license = { target = REM	cost_factor = 1.0 equipment = {	type = cv_nav_bomber_equipment_1 version = 0 }}
+										}
+										FRA = {
+											create_production_license = { target = REM	cost_factor = 1.0 equipment = {	type = infantry_equipment_0 version = 0 }}
+											create_production_license = { target = REM	cost_factor = 1.0 equipment = {	type = light_tank_equipment_0 version = 0 }}
+										}
+										add_equipment_to_stockpile = {  type = fighter_equipment_1 amount = 50 producer = GER }
+										add_equipment_to_stockpile = {  type = gw_tank_equipment amount = 500 producer = GER }
+										add_equipment_to_stockpile = {  type = gw_tank_equipment amount = 500 producer = USA }
+										add_equipment_to_stockpile = {  type = fighter_equipment_0 amount = 100 producer = USA }
+										add_equipment_to_stockpile = {  type = fighter_equipment_0 amount = 100 producer = ENG }
+										add_equipment_to_stockpile = {  type = gw_tank_equipment amount = 500 producer = JAP }
+										add_equipment_to_stockpile = {  type = fighter_equipment_0 amount = 100 producer = JAP }
+										add_equipment_to_stockpile = {  type = fighter_equipment_0 amount = 500 producer = FRA }
+										add_equipment_to_stockpile = {  type = infantry_equipment_1 amount = 2500 producer = USA }
+
+										}
+
+									}
+
+# Istanbul -> Constantinople
+
+country_event = {
+    id = roman.40
+    title = roman.40.t
+    desc = roman.40.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+    
+	trigger = {
+		REM = { controls_state = 341 
+		
+	}
+		NOT = { country_exists = TUR }
+	}
+    
+
+    immediate = {
+        set_global_flag = name_Istanbul
+    }
+
+    option = {
+        name = "As it Should be."
+
+        set_province_name = { id = 9833 name = "Constantinople" }
+        341 = { set_state_name = "Constantinople" }
+    }
+}
+#Historical Province Re-Naming event
+country_event = {
+    id = roman.55
+    title = roman.55.t
+    desc = roman.55.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+    mean_time_to_happen = {
+		days = 7
+	}
+
+    immediate = {
+        set_global_flag = name_Italia
+    }
+
+    option = {
+        name = "As it Should be."
+
+        set_province_name = { id = 4159 name = "Messana" }
+		set_province_name = { id = 10074 name = "Panormus" }
+        set_province_name = { id = 819 name = "Neapolis" }
+		set_province_name = { id = 11837 name = "Tarentum" }
+		set_province_name = { id = 11846 name = "Antium" }
+		set_province_name = { id = 11833 name = "Liburna" }
+		set_province_name = { id = 9907 name = "Florentia" }
+		set_province_name = { id = 6973 name = "Luna" }
+		set_province_name = { id = 6788 name = "Genua" }
+		set_province_name = { id = 6780 name = "Taurinorum" }
+		set_province_name = { id = 3780 name = "Mediolanum" }
+		set_province_name = { id = 11584 name = "Ravenna" }
+		set_province_name = { id = 6606 name = "Bononia" }
+		set_province_name = { id = 6626 name = "Aquilea" }
+		set_province_name = { id = 12002 name = "Melita" }
+		set_province_name = { id = 11773 name = "Caralis" }
+		set_province_name = { id = 3838 name = "Adiacium" }
+		set_province_name = { id = 11969 name = "Carthago" }
+		set_province_name = { id = 9994 name = "Utica" }
+		set_province_name = { id = 1149 name = "Lepcis Magna" }
+		set_province_name = { id = 11954 name = "Berenike" }
+		set_province_name = { id = 1130 name = "Antipyrgis" }
+		115 = { set_state_name = "Sicilia" }
+		117 = { set_state_name = "Graecia" }
+		156 = { set_state_name = "Magna" }
+		458 = { set_state_name = "Carthago" }
+		157 = { set_state_name = "Anconum" }
+		162 = { set_state_name = "Etrusca" }
+		161 = { set_state_name = "Romagna" }
+		159 = { set_state_name = "Gallia Cisalpina" }
+		158 = { set_state_name = "Pedemontium" }
+		160 = { set_state_name = "Venetia" }
+		736 = { set_state_name = "Histria" }
+    }
+}
+country_event = {
+    id = roman.41
+    title = roman.41.t
+    desc = roman.41.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+    trigger = {
+		SPR = {
+		has_global_flag = spanish_civil_war
+	}}
+
+
+    option = {
+        name = "An Excellent Opportunity!"
+		set_country_flag = REM_spanish_interfereance
+        
+    }
+}
+country_event = {
+    id = roman.42
+    title = roman.42.t
+    desc = roman.42.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+    
+
+
+    option = {
+        name = "Let the negotiations begin!"
+		REM= {
+								country_event = { id = roman.43 }
+					      }
+        
+    }
+}
+country_event = {
+    id = roman.43
+    title = roman.43.t
+    desc = roman.43.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+    
+
+
+    option = {
+        name = "Back The Allied Plan."
+		REM= {
+								country_event = { id = roman.44 }
+					      }
+        
+    }
+	 option = {
+        name = "Side With Hitler and the Axis."
+		REM= {
+								country_event = { id = roman.45 }
+					      }
+	 }
+	 #option = {
+     #   name = "Do Favors For Stalin and The International."
+	#	REM= {
+	#							country_event = { id = roman.46 }
+	#				      }
+	 #}
+	 option = {
+        name = "As Expected, The World Powers Agree on Nothing."
+		REM= {
+								country_event = { id = roman.47 }
+					      }
+	 }
+}
+country_event = {
+    id = roman.44
+    title = roman.44.t
+    desc = roman.44.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+    
+
+
+    option = {
+        name = "Accept the Allied Proposal."
+		REM= {
+				add_war_support = 5
+				declare_war_on = { target = D01 type = puppet }
+				declare_war_on = { target = D02 type = puppet }
+				transfer_state = 452
+				transfer_state = 447
+				transfer_state = 446
+				transfer_state = 445
+				transfer_state = 454
+				transfer_state = 183
+				transfer_state = 455
+				transfer_state = 551
+				
+					      }
+        
+    }
+}
+country_event = {
+    id = roman.45
+    title = roman.45.t
+    desc = roman.45.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+    
+
+
+    option = {
+        name = "Accept the Axis Plans"
+		GER= {
+				add_to_faction = D01
+				create_production_license = { target = REM	cost_factor = 1.0 equipment = {	type = fighter_equipment_1 version = 0 }}
+				create_production_license = { target = REM	cost_factor = 1.0 equipment = {	type = tac_bomber_equipment_0 version = 0 }}
+				create_production_license = { target = REM	cost_factor = 1.0 equipment = {	type = heavy_tank_equipment_1 version = 0 }}
+				create_production_license = { target = REM	cost_factor = 1.0 equipment = {	type = light_tank_equipment_1 version = 0 }}
+				create_production_license = { target = REM	cost_factor = 1.0 equipment = {	type = light_tank_equipment_2 version = 0 }}
+				
+		}
+		REM = {
+				declare_war_on = { target = D01 type = annex_everything }
+				add_war_support = 10
+				add_equipment_to_stockpile = {  type = fighter_equipment_0 amount = 200 producer = GER }
+				add_equipment_to_stockpile = {  type = fighter_equipment_1 amount = 50 producer = GER }
+				add_equipment_to_stockpile = {  type = tac_bomber_equipment_0 amount = 200 producer = GER }
+				add_equipment_to_stockpile = {  type = tac_bomber_equipment_1 amount = 50 producer = GER }
+				add_equipment_to_stockpile = {  type = heavy_tank_equipment_1 amount = 850 producer = GER }
+				add_equipment_to_stockpile = {  type = gw_tank_equipment amount = 1500 producer = GER }
+				add_equipment_to_stockpile = {  type = light_tank_equipment_1 amount = 900 producer = GER }
+				add_equipment_to_stockpile = {  type = infantry_equipment_1 amount = 2500 producer = GER }
+		}
+					      }
+        
+    }
+	
+}
+country_event = {
+    id = roman.46
+    title = roman.46.t
+    desc = roman.46.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+    
+
+
+    option = {
+        name = "Accept the International's Proposal."
+		REM= {
+				
+					      }
+        
+    }
+}
+country_event = {
+    id = roman.47
+    title = roman.47.t
+    desc = roman.47.d
+    picture = GFX_report_event_generic_read_write
+
+    is_triggered_only = yes
+    
+
+
+    option = {
+        name = "Back The Fascists."
+		REM= {
+				add_war_support = 5
+				declare_war_on = { target = D02 type = annex_everything }
+        
+    }}
+	option = {
+        name = "Back The Communists."
+		REM= {
+				add_war_support = 5
+				declare_war_on = { target = D01 type = annex_everything }
+					      }
+        
+    }
+	option = {
+        name = "Attack them both!"
+		REM= {
+				add_war_support = 10
+				declare_war_on = { target = D01 type = annex_everything }
+				declare_war_on = { target = SPR type = annex_everything }
+				173 = {
+			
+				add_core_of = REM
+				}
+				169 = {
+			
+				add_core_of = REM
+				}
+				170 = {
+			
+				add_core_of = REM
+				}
+				168 = {
+			
+				add_core_of = REM
+				}
+				41 = {
+			
+				add_core_of = REM
+				}
+				699 = {
+			
+				add_core_of = REM
+				}
+				290 = {
+			
+				add_core_of = REM
+				}
+				175 = {
+			
+				add_core_of = REM
+				}
+				174 = {
+			
+				add_core_of = REM
+				}
+				171 = {
+			
+				add_core_of = REM
+				}
+				176 = {
+			
+				add_core_of = REM
+				}
+				172 = {
+			
+				add_core_of = REM
+				}
+				166 = {
+			
+				add_core_of = REM
+				}
+				165 = {
+			
+				add_core_of = REM
+				}
+				167 = {
+			
+				add_core_of = REM
+				}
+				297 = {
+			
+				add_core_of = REM
+				}
+				}
+	}
+        
+    }
+}

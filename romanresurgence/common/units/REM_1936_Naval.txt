@@ -1,0 +1,63 @@
+
+units= {
+
+	fleet = {
+		name = "I. Classis Mitsensis"			
+		naval_base = 11837 # Taranto
+		task_force = {				
+			name = "Battlegroup"
+			location = 11837 # Taranto	
+			ship = { name = "INF Jupiter" pride_of_the_fleet = yes definition = battleship start_experience_factor = 0.25 equipment = { ship_hull_heavy_1 = { amount = 1 owner = REM version_name = "Pantheon Class" } } }				
+			ship = { name = "INF Mars" definition = battleship start_experience_factor = 0.25 equipment = { ship_hull_heavy_1 = { amount = 1 owner = REM version_name = "Pantheon Class" } } }				
+			ship = { name = "INF Athena" definition = battleship start_experience_factor = 0.25 equipment = { ship_hull_heavy_1 = { amount = 1 owner = REM version_name = "Pantheon Class" } } }							
+			ship = { name = "INF Hades" definition = battleship start_experience_factor = 0.25 equipment = { ship_hull_heavy_1 = { amount = 1 owner = REM version_name = "Pantheon Class" } } }				
+			ship = { name = "INF Vulcan" definition = battleship start_experience_factor = 0.25 equipment = { ship_hull_heavy_1 = { amount = 1 owner = REM version_name = "Pantheon Class" } } }
+			ship = { name = "INF Lepidus" definition = light_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = REM version_name = "Rubicon Class" } } }				
+			ship = { name = "INF Antony" definition = light_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = REM version_name = "Rubicon Class" } } }				
+			ship = { name = "INF Pompey" definition = light_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = REM version_name = "Rubicon Class" } } }
+			ship = { name = "INF Cincinnatus" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = REM version_name = "Cincinnatus Class" } } }				
+			ship = { name = "INF Ceasar" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = REM version_name = "Cincinnatus Class" } } }
+			ship = { name = "INF Tempestus" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = REM version_name = "Lessus Class" } } }
+			ship = { name = "INF Lessus" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = REM version_name = "Lessus Class" } } }
+			ship = { name = "INF Ahenobarbus" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = REM version_name = "Lessus Class" } } }
+			ship = { name = "INF Tyranus" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = REM version_name = "Lessus Class" } } }
+		}				
+		task_force = {					
+			name = "Carrier Division"		
+			location = 11837 # Taranto
+			ship = { name = "INF Volturnus" definition = carrier start_experience_factor = 0.25 equipment = { ship_hull_carrier_conversion_bb = { amount = 1 owner = REM version_name = "Volturnus Class" } } 
+				air_wings = {
+					cv_fighter_equipment_0 =  { owner = "REM" amount = 12 }
+					cv_nav_bomber_equipment_1 =  { owner = "REM" amount = 12 }
+				}
+			}
+			ship = { name = "INF Fontus" definition = carrier start_experience_factor = 0.25 equipment = { ship_hull_carrier_conversion_bb = { amount = 1 owner = REM version_name = "Volturnus Class" } } 
+				air_wings = {
+					cv_fighter_equipment_0 =  { owner = "REM" amount = 12 }
+					cv_nav_bomber_equipment_1 =  { owner = "REM" amount = 12 }
+				}
+			}
+		}										
+	}	
+}
+
+
+#########################
+## STARTING PRODUCTION ##
+#########################
+instant_effect = {
+
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_1
+			creator = "REM"
+			version_name = "Lessus Class"
+		}
+		name = "INF Florius" 
+		requested_factories = 2
+		progress = 0.80
+		amount = 6
+	}
+}
+
+#####################

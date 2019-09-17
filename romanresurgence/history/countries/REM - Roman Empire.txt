@@ -1,0 +1,158 @@
+﻿capital = 2
+
+OOB = "REM_1936"
+
+set_research_slots = 4
+
+set_technology = {
+	infantry_weapons = 1
+	tech_support = 1
+	tech_recon = 1
+	gw_artillery = 1
+	transport = 1
+	early_carrier = 1
+	early_destroyer = 1
+	early_battleship = 1
+	early_battlecruiser = 1
+	early_light_cruiser = 1
+	early_heavy_cruiser = 1
+	early_submarine = 1
+	gwtank = 1
+	early_fighter = 1
+	early_bomber = 1
+	cv_early_fighter = 1
+	naval_bomber1 = 1
+	cv_naval_bomber1 = 1
+	motorised_infantry = 1
+}
+add_ideas = {
+	Imperium
+	limited_conscription
+	partial_economic_mobilisation
+
+}
+
+set_politics = {
+
+	parties = {
+		democratic = {
+			popularity = 10
+		}
+
+		fascism = {
+			popularity = 15
+		}
+
+		communism = {
+			popularity = 0
+		}
+
+		neutrality = {
+			popularity = 75
+		}
+	}
+
+	ruling_party = neutrality
+	last_election = "1933.3.5"
+	election_frequency = fascism
+	elections_allowed = no
+}
+
+set_convoys = 100
+
+
+create_country_leader = {
+	name = "Emperor Publius Nematorius Crassipes"
+	desc = "Quick-witted and Treacherous to anyone he does not Believe is on his side, Crassipes is a true descendant of Augustus Caesar himself. After many long Centuries his family is ready to re-create that glorious Empire."
+	picture = "Roman_Empire_Leader.dds"
+	expire = "1975.7.5"
+	ideology = despotism
+	traits = {
+		inexperienced_imperialist
+		triumphant_revolutionary
+
+	}
+}
+#create_country_leader = {
+#	name = "President for Life Publius Nematorius Crassipes"
+#	desc = "Quick-witted and Treacherous to anyone he does not Believe is on his side, Crassipes is a true descendant of Augustus Caesar himself. After many long Centuries his family is ready to re-create that glorious Empire."
+#	picture = "Roman_Empire_Leader.dds"
+#	expire = "1975.1.20"
+#	ideology = democratic_ideology
+#	traits = {
+#		inexperienced_imperialist
+#		triumphant_revolutionary
+#	}
+#}
+#create_country_leader = {
+#	name = "Emperor Publius Nematorius Crassipes"
+#	desc = "Quick-witted and Treacherous to anyone he does not Believe is on his side, Crassipes is a true descendant of Augustus Caesar himself. After many long Centuries his family is ready to re-create that glorious Empire."
+#	picture = "Roman_Empire_Leader.dds"
+#	expire = "1980.3.7"
+#	ideology = fascism_ideology
+#	traits = {
+#		inexperienced_imperialist
+#		triumphant_revolutionary
+#	}
+#}
+#create_country_leader = {
+#	name = "Lucius Lucretius Aselio"
+#	desc = "Lucius is little more than a Soviet Toady. In late 1939, Lucius and his party accounted for roughly .5% of all Romans, and the only reason Communism caught on was Soviet Espionage."
+#	picture = "Roman_Empire_Leader.dds"
+#	expire = "1950.7.5"
+#	ideology = Communism_ideology
+#	traits = {
+#		
+#	}
+#}
+create_field_marshal = {
+	name = "Gaius Sertorius Aculeo"
+	picture = "Portrait_Europe_Generic_land_1.dds"
+	traits = {  commando }
+	skill = 4
+}
+create_corps_commander = {
+	name = "Marcus Acilius Ahenobarbus"
+	picture = "Portrait_Europe_Generic_land_2.dds"
+	traits ={trickster
+		panzer leader
+}
+	skill = 3
+}
+create_corps_commander = {
+	name = "Vertius Servius Tullius"
+	picture = "Portrait_Europe_Generic_land_3.dds"
+	skill = 2
+}
+create_corps_commander = {
+	name = "Julius Manius Maximus"
+	picture = "Portrait_Europe_Generic_land_4.dds"
+	skill = 2
+}
+create_corps_commander = {
+	name = "Septimus Pilus Cato"
+	picture = "Portrait_Europe_Generic_land_5.dds"
+
+	skill = 1
+}
+create_navy_leader = {
+	name = "Spurius Marius Carbo"
+		picture = "Portrait_Europe_Generic_navy_1.dds"
+	traits = { blockade_runner }
+	skill = 4
+
+}
+create_navy_leader = {
+	name = "Parius Marius Carbo"
+		picture = "Portrait_Europe_Generic_navy_2.dds"
+	#traits = { blockade_runner }
+	skill = 3
+
+}
+create_navy_leader = {
+	name = "Publius Manius Hilarius"
+		picture = "Portrait_Europe_Generic_navy_3.dds"
+	#traits = { blockade_runner }
+	skill = 1
+
+}

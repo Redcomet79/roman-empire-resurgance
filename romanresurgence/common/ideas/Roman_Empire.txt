@@ -1,0 +1,993 @@
+ideas = {
+
+	country = {
+
+		Imperium = {
+			allowed = {
+				always = no
+				}
+			allowed_civil_war = {
+				always = yes
+				}
+			removal_cost = -1
+
+			modifier = {
+				
+				drift_defense_factor = 2.0
+				political_power_gain = 0.6
+				planning_speed = 0.15
+				generate_wargoal_tension = -1.00
+				join_faction_tension = -1.00
+				lend_lease_tension = -0.50
+				guarantee_tension = -1.0
+
+				ai_get_ally_desire_factor = -100
+				}
+			rule = {
+				can_send_volunteers = yes
+				can_create_factions = yes
+				can_puppet = yes
+				}
+			}
+		P_A = {
+			allowed = {
+				always = no
+				}
+			allowed_civil_war = {
+				always = yes
+				}
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.05
+				industrial_capacity_factory = -0.03
+				production_speed_buildings_factor = -0.03
+				training_time_factor = 0.04
+				unity_factor = -0.01
+				army_org_Factor = -0.04
+				
+
+				
+				}
+			
+			}
+		L_A = {
+			allowed = {
+				always = no
+				}
+			allowed_civil_war = {
+				always = yes
+				}
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.04
+				industrial_capacity_factory = 0.4
+				production_speed_buildings_factor = 0.4
+				training_time_factor = -0.06
+				unity_factor = 0.05
+				army_org_Factor = 0.06
+				send_volunteers_tension = -0.20
+
+				
+				}
+			
+			}
+		}
+political_advisor = {
+		Romulus_Samum_Dacia = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+			available = {
+				has_completed_focus = "Fortify the alps"
+			}
+
+			traits = { fortification_engineer }
+		}
+
+		Marcus_Licinus_Coronus = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			traits = { armaments_organizer }
+		}
+
+		Gaius_Marius_Varro = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			traits = { captain_of_industry }
+		}
+
+		Numerius_Cornelius_Bestia = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			traits = { war_industrialist }
+		}
+
+		Publius_Porcius_Brutus = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			traits = { communist_revolutionary }
+
+			on_add = {
+				country_event = political.1
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = communism
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		Tiberius_Cominius_Atella = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			traits = { democratic_reformer }
+
+			on_add = {
+				country_event = political.13
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = democratic
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		Manius_Atilius_Capito = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			traits = { fascist_demagogue }
+
+			on_add = {
+				country_event = political.7
+			}
+
+			do_effect = {
+				NOT = {
+					has_government = fascism
+				}
+			}
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		Publius_Didius_Caecus = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+
+			traits = { silent_workhorse }
+		}
+
+		Publius_Didius_Caecus = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			traits = { prince_of_terror }
+		}
+
+		Vibius_Vibius_Vitulus = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			traits = { silent_workhorse }
+		}
+
+		Tiberius_Hortensius_Cordus = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			traits = { backroom_backstabber }
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		Appius_Ovidius_Bassus = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			traits = { smooth_talking_charmer }
+		}
+	}
+
+
+	# TECHNOLOGY
+	tank_manufacturer = {
+
+		designer = yes
+
+		EHI = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			research_bonus = {
+				armor = 0.10
+			}
+
+			traits = { heavy_tank_manufacturer }
+
+		}
+
+		RLAT = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			research_bonus = {
+				armor = 0.10
+			}
+
+			traits = { fast_tank_manufacturer }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		TAG = {
+
+			allowed = {
+				original_tag = REM
+			}
+
+			research_bonus = {
+				armor = 0.10
+			}
+
+			traits = { medium_tank_manufacturer }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+	}
+
+	naval_manufacturer = {
+
+		designer = yes
+
+		CFS = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			research_bonus = {
+				naval_equipment = 0.10
+			}
+
+			equipment_bonus = {
+
+			}
+
+			traits = { atlantic_fleet_naval_manufacturer }
+
+		}
+
+		NNI = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			research_bonus = {
+				naval_equipment = 0.10
+			}
+
+			traits = { raiding_fleet_naval_manufacturer }
+
+			equipment_bonus = {
+
+			}
+
+		}
+	}
+
+	aircraft_manufacturer = {
+
+		designer = yes
+
+		AAE = {
+
+			allowed = {
+				original_tag = REM
+			}
+
+			research_bonus = {
+				air_equipment = 0.10
+			}
+
+			traits = { light_aircraft_manufacturer }
+
+			equipment_bonus = {
+
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		AnB = {
+			allowed = {
+				original_tag = REM
+			}
+
+			research_bonus = {
+				air_equipment = 0.10
+			}
+
+			traits = { CAS_manufacturer }
+
+			equipment_bonus = {
+
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+
+		CA = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+
+			research_bonus = {
+				air_equipment = 0.10
+			}
+
+			traits = { medium_aircraft_manufacturer }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		RLAA = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+
+			research_bonus = {
+				air_equipment = 0.10
+			}
+
+			traits = { heavy_aircraft_manufacturer }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		LAD = {
+
+			allowed = {
+				original_tag = REM
+			}
+
+
+			research_bonus = {
+				air_equipment = 0.10
+			}
+
+			traits = { naval_aircraft_manufacturer }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+
+	}
+
+	industrial_concern = {
+
+		Neapols = {
+
+			allowed = {
+				original_tag = REM
+			}
+
+			research_bonus = {
+				industry = 0.05
+				synth_resources = 0.1
+			}
+
+			traits = { refinery_concern }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		CSC = {
+
+			allowed = {
+				original_tag = REM
+			}
+
+			research_bonus = {
+				industry = 0.10
+
+			}
+
+			traits = { industrial_concern }
+		}
+
+		Jupiter = {
+
+			allowed = {
+				original_tag = REM
+			}
+
+			research_bonus = {
+				electronics = 0.10
+			}
+
+			traits = { electronics_concern }
+		}
+	}
+
+	materiel_manufacturer = {
+
+		designer = yes
+
+		RLA = {
+
+			allowed = {
+				original_tag = REM
+			}
+
+			research_bonus = {
+				artillery = 0.10
+			}
+
+			traits = { artillery_manufacturer }
+
+			modifier = {
+				# +10% arty/at/aa research speed
+			}
+		}
+
+		Cast = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			research_bonus = {
+				infantry_weapons = 0.10
+			}
+
+			traits = { infantry_equipment_manufacturer }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+
+
+
+		Fer = {
+
+			allowed = {
+				original_tag = REM
+				date > 1939.9.13
+			}
+
+			research_bonus = {
+				motorized_equipment = 0.10
+			}
+
+			traits = { motorized_equipment_manufacturer }
+		}
+	}
+
+	theorist = {
+		Vertius_Calidus_Maximus = {
+
+			allowed = {
+				original_tag = REM
+			}
+
+			research_bonus = {
+				rocketry = 0.10
+			}
+
+			traits = { rocket_scientist }
+		}
+
+		Septimus_Calidus_Maximus = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			research_bonus = {
+				nuclear = 0.10
+			}
+
+			traits = { nuclear_scientist }
+		}
+
+		Publius_Calidus_Maximus = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			research_bonus = {
+				land_doctrine = 0.07
+			}
+
+
+			traits = { blitzkrieg_theorist }
+		}
+
+		Marcus_Valerius_Libo = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			cost = 250
+
+			research_bonus = {
+				cat_mobile_warfare = 0.10
+			}
+
+
+			traits = { mobile_warfare_expert }
+		}
+
+		Gaius_Salonius_Ahala = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			cost = 250
+
+			research_bonus = {
+				cat_battlefield_support = 0.10
+			}
+
+			traits = { close_air_support_proponent }
+		}
+
+		Lucius_Artorius_Albus = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			research_bonus = {
+				air_doctrine = 0.07
+			}
+
+			traits = { air_warfare_theorist }
+		}
+
+		Titus_Furius_Barba = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			research_bonus = {
+				air_doctrine = 0.07
+			}
+
+			traits = { dive_bomber }
+		}
+
+		Gnaeus_Verginius_Calvinus = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			cost = 250
+
+			research_bonus = {
+				cat_trade_interdiction = 0.20
+			}
+
+			traits = { submarine_specialist }
+		}
+
+		Publius_Licinus_Celsus = {
+
+
+			allowed = {
+				original_tag = REM
+
+
+			}
+
+			research_bonus = {
+				naval_doctrine = 0.07
+			}
+
+			traits = { naval_theorist }
+		}
+	}
+
+	# MILITARY
+	army_chief = {
+
+		Gaius_Sertorius_Aculeo = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			traits = { army_chief_organizational_2 }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		Marcus_Acilius_Ahenobarbus  = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			traits = { army_chief_drill_2 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		Vertius_Servius_Tullius = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			traits = { army_chief_offensive_2 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		Julius_Manius_Maximus = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+			available = {
+				has_completed_focus = "Reform the Legions"
+			}
+
+
+			traits = { army_chief_maneuver_2 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	air_chief = {
+
+		Lucius_Aquilus_Maximus = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			traits = { air_chief_ground_support_2 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		Publius_Rutilius_Cincinnatus = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+			available = {
+				has_completed_focus = "Found the Air Legions"
+			}
+
+			traits = { air_chief_all_weather_2 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		Aulus_Iulius_Albinus = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			traits = { air_chief_reform_2 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	navy_chief = { #CHIEF OF NAVY
+
+		Spurius_Marius_Carbo = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			traits = { navy_chief_decisive_battle_2 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		Parius_Marius_Carbo = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			traits = { navy_chief_commerce_raiding_3 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	high_command = {
+
+		G_S_A = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			traits = { army_infantry_2 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		M_A_A = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+			available = {
+					has_completed_focus = "Reform the Legions"
+				}
+
+			traits = { army_armored_3 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		V_S_T = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			traits = { army_regrouping_2 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		J_M_M = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			traits = { army_logistics_2 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		S_P_C = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+			available = {
+					has_completed_focus = "Found the Air Legions"
+			}
+
+			traits = { air_close_air_support_2 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		A_I_A = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			traits = { air_bomber_interception_2 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		L_A_M = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			traits = { air_airborne_2 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		P_M_C = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			traits = { navy_naval_air_defense_2 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		S_M_C = {
+
+
+			allowed = {
+				original_tag = REM
+
+			}
+
+			traits = { navy_fleet_logistics_2 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		P_M_H = {
+
+
+			allowed = {
+				original_tag = REM
+			}
+
+			traits = { navy_anti_submarine_1 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+
+
+
+
+}

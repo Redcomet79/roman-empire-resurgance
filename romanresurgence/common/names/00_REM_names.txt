@@ -1,0 +1,113 @@
+﻿REM = {
+	
+	submarine = {
+		prefix = "INF"
+		generic = { "Subaquaeneum" }
+		unique = {
+			
+		}
+	}
+	destroyer = {
+		prefix = "INF"
+		generic = { "Vastator" }
+		unique = {
+			
+		}
+	}
+	light_cruiser = {
+		prefix = "INF"
+		generic = { "Levis Navis" }
+		unique = {
+			
+
+		}
+	}
+	heavy_cruiser = {
+		prefix = "INF"
+		generic = { "Dura Navis" }
+		unique = {
+			
+		}
+	}
+	battle_cruiser = {
+		prefix = "INF"
+		generic = { "Navis Bello" }
+		unique = {
+			
+		}
+	}
+    battleship = {
+        prefix = "INF"
+        generic = { "Navis Magna" }
+        unique = {
+            
+        }
+    }
+	carrier = {
+		prefix = "INF"
+		generic = { "Aere Tabellarius" }
+		unique = {
+			
+			
+		}
+	}
+air_wing_names_template = AIR_WING_NAME_REM_FALLBACK
+
+	#Air wings can only be named through archetype
+
+	cv_fighter_equipment = {
+		prefix = "%s. "
+		generic = { "Cohors Volans Classiarius" }
+		generic_pattern = AIR_WING_NAME_REM_CARRIER
+		unique = { 
+
+		}	
+	}
+
+	cv_CAS_equipment = {
+		prefix = "%s. "
+		generic = { "Cohors Volans Classiarius" }
+		generic_pattern = AIR_WING_NAME_REM_CARRIER
+		unique = {
+		
+		}	
+	}
+	cv_nav_bomber_equipment = {
+		prefix = " %s. "
+		generic = { "Cohors Volans Classiarius" }
+		generic_pattern = AIR_WING_NAME_REM_CARRIER
+		unique = {
+		
+		}	
+	}
+
+	infantry = {
+		prefix = ""
+		generic = { "Cohors Peditum" }
+		generic_pattern = "UNIT_GENERIC_NAME_GENERIC_INFANTRY"
+	}
+	mountaineers = {
+		prefix = ""
+		generic = { "Cohors Montem" }
+		generic_pattern = "UNIT_GENERIC_NAME_GENERIC_INFANTRY"
+		unique = {}
+	}
+	cavalry = {
+		prefix = ""
+		generic = { "Cohors Equite" }
+		generic_pattern = "UNIT_GENERIC_NAME_GENERIC_INFANTRY"
+		unique = {}
+	}
+	light_armor = {
+		prefix = ""
+		generic = { "Cohors Armatae-Plaustrum-Light" }
+		generic_pattern = "UNIT_GENERIC_NAME_GENERIC_INFANTRY"
+		unique = {}
+	}
+	medium_armor = {
+		prefix = ""
+		generic = { "Cohors Armatae-Plaustrum-Medium" }
+		generic_pattern = "UNIT_GENERIC_NAME_GENERIC_INFANTRY"
+		unique = {}
+	}
+}

@@ -1,0 +1,1430 @@
+focus_tree = {
+	id = REM_focus
+
+	country = {
+		factor = 0
+
+		modifier = {
+			add = 10
+			tag = REM
+		}
+
+		modifier = {
+			add = 10
+			original_tag = REM
+		}
+	}
+
+	default = no
+
+	focus = {
+		id = REM_naval
+		icon = GFX_goal_generic_build_navy
+		x = 3
+		y = 0
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			navy_experience = 150
+			add_ideas = bureau_of_ships_focus
+		}
+	}
+	focus = {
+		id = REM_naval_firepower
+		
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = REM_naval }
+		mutually_exclusive = { focus = REM_naval_air }
+		x = 0
+		y = 1
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.6
+				uses = 4
+				category = bb_tech
+			}
+		}
+	}
+
+	focus = {
+		id = REM_naval_battleships
+		
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = REM_naval_firepower }
+		x = 0
+		y = 2
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 4
+			category = dd_tech
+		}
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 2
+			category = cl_tech
+		}
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 4
+			category = ca_tech
+		}
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 4
+			category = bc_tech
+		}
+			add_tech_bonus = {
+				bonus = 0.5
+				category = base_strike_main
+			}
+		}
+	}
+
+	focus = {
+		id = REM_naval_air
+		icon = GFX_goal_generic_navy_carrier
+		prerequisite = { focus = REM_naval }
+		mutually_exclusive = { focus = REM_naval_firepower }
+		x = 2
+		y = 1
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.6
+				uses = 4
+				category = cv_tech
+			}
+		}
+	}
+	focus = {
+		id = REM_naval_air_design
+		icon = GFX_goal_generic_air_naval_bomber
+		prerequisite = { focus = REM_naval_air }
+		x = 2
+		y = 2
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = USA_bureau_of_aeronautics
+				bonus = 0.5
+				uses = 3
+				category = naval_air
+			}
+		}
+	}
+
+	focus = {
+		id = REM_naval_marines
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = REM_naval }
+		x = 4
+		y = 1
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				technology = marines
+				technology = marines2
+			}
+		}
+	}
+
+	focus = {
+		id = REM_naval_invasion
+		icon = GFX_goal_generic_amphibious_assault
+		prerequisite = { focus = REM_naval_marines }
+		x = 4
+		y = 2
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = tp_tech
+			}
+		}
+	}
+	focus = {
+		id = REM_naval_convoys
+		icon = GFX_goal_generic_navy_anti_submarine
+		prerequisite = { focus = REM_naval }
+		x = 6
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = escort_effort_focus
+		}
+	}
+
+	focus = {
+		id = REM_naval_ASW
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = REM_naval_convoys }
+		x = 6
+		y = 2
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = convoy_defense_tree
+			}
+		}
+	}
+	
+	focus = {
+		id = REM_demand_Italy
+		
+		icon = GFX_goal_generic_territory_or_war
+		available = { is_puppet = no
+			      has_army_manpower = { size > 450000 }
+			     NOT= { has_war_with = ITA }
+		}
+		bypass = {
+			has_war_with = ITA
+			NOT = { country_exists = ITA }
+		}
+		x = 8
+		y = 0
+		cost = 1
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			REM = {
+				country_event = { id = roman.4 }
+				country_event = { id = roman.55 }
+
+			}
+		}
+	}
+
+	focus = {
+		id = REM_steal_gibraltar
+		icon = GFX_goal_generic_territory_or_war
+		prerequisite = { focus = REM_demand_Italy }
+		available = { is_puppet = no }
+		bypass = {
+			NOT = { country_exists = ENG }
+		}
+		x = 8
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			REM = {
+				country_event = { id = roman.5 }
+			}
+		}
+	}
+	focus = {
+		id = REM_seize_suez
+		icon = GFX_goal_generic_territory_or_war
+		prerequisite = { focus = REM_steal_gibraltar }
+		available = { is_puppet = no }
+		bypass = {
+			NOT = { country_exists = ENG }
+		}
+		x = 8
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			REM = {
+				country_event = { id = roman.10 }
+			}
+		}
+	}
+	focus = {
+		id = REM_industrial_initiative
+		icon = GFX_goal_generic_construct_mil_factory
+		
+		prerequisite = { focus = REM_infrastructure }
+		x = 12
+		y = 2
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = wartime_industry_focus
+		}
+	}
+focus = {
+		id = REM_RnD
+		icon = GFX_focus_research
+		prerequisite = { focus = REM_industrial_grants}
+		x = 10
+		y = 4
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_research_slot = 2
+		}
+	}
+focus = {
+		id = REM_industrial_grants
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = REM_industrial_initiative}
+		x = 10
+		y = 3
+		cost = 10
+		ai_will_do = {
+			factor = 9
+		}
+
+		available_if_capitulated = yes
+
+
+		completion_reward = {
+			REM = {
+			
+
+					free_building_slots = {
+						building = industrial_complex
+						size = 3
+						include_locked = yes
+					}
+
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+
+			}
+			add_tech_bonus = {
+				name = construction_tech_bonus
+				bonus = 0.6
+				uses = 3
+				category = construction_tech
+			}
+		}
+	}
+focus = {
+		id = REM_infrastructure
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = REM_demand_Italy }
+		x = 12
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			2 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+			117 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+			156 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+			157 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+			158 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+			159 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+			160 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+			161 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+			162 = {
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+
+		}
+	}
+focus = {
+		id = REM_alpine_def
+
+		icon = GFX_goal_generic_construct_military
+		prerequisite = { focus = REM_demand_Italy}
+		x = 10
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			# French border
+			158 = {
+				custom_effect_tooltip = ITA_fortification_effort_forts
+				hidden_effect = {
+					add_building_construction = {
+						type = bunker
+						level = 5
+						province = 611
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 5
+						province = 6780
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 5
+						province = 9738
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 5
+						province = 11721
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 5
+						province = 11891
+						instant_build = yes
+					}
+				}
+			}
+			# Dodecanese
+			164 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 5
+					province = 10007
+					instant_build = yes
+				}
+			}
+			# Sardinia
+			114 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 5
+					province = 9863
+					instant_build = yes
+				}
+			}
+			# Sicily
+			115 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 5
+					province = 4159
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = REM_alpine_fortress
+
+		icon = GFX_goal_generic_construct_military
+		prerequisite = { focus = REM_alpine_def}
+		x = 10
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			# French border
+			158 = {
+				custom_effect_tooltip = ITA_fortification_effort_forts
+				hidden_effect = {
+					add_building_construction = {
+						type = bunker
+						level = 5
+						province = 611
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 5
+						province = 6780
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 5
+						province = 9738
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 5
+						province = 11721
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 5
+						province = 11891
+						instant_build = yes
+					}
+				}
+			}
+			# Dodecanese
+			164 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 5
+					province = 10007
+					instant_build = yes
+				}
+			}
+			# Sardinia
+			114 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 5
+					province = 9863
+					instant_build = yes
+				}
+			}
+			# Sicily
+			115 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 5
+					province = 4159
+					instant_build = yes
+				}
+			}
+		}
+	}
+focus = {
+		id = REM_oil
+		icon = GFX_goal_generic_production
+
+		prerequisite = { focus = REM_industrial_initiative }
+		available = {
+			REM = {
+				controls_state = 662
+			}
+		}
+
+		x = 12
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_resource = {
+				type = oil
+				amount = 20
+				state = 662
+			}
+		}
+	}
+focus = {
+		id = REM_more_oil
+		icon = GFX_goal_generic_oil_refinery
+
+		prerequisite = { focus = REM_oil }
+		available = {
+			REM = {
+				controls_state = 450
+			}
+		}
+		x = 12
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_resource = {
+				type = oil
+				amount = 20
+				state = 450
+			}
+			450 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 4
+					instant_build = yes
+				}
+			}
+
+		}
+	}
+focus = {
+		id = REM_RNOC
+		icon = GFX_goal_generic_oil_refinery
+
+		prerequisite = { focus = REM_more_oil }
+		available = {
+			REM = {
+				controls_state = 450
+			}
+		}
+		x = 12
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_resource = {
+				type = oil
+				amount = 20
+				state = 450
+			}
+			450 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 4
+					instant_build = yes
+				}
+			}
+
+		}
+	}
+	focus = {
+		id = REM_demand_yug
+		prerequisite = { focus = REM_seize_suez }
+		icon = GFX_goal_generic_territory_or_war
+		available = {
+			is_puppet = no
+			NOT = { has_war_with = YUG }
+			NOT = { is_in_faction_with = YUG }
+			has_army_manpower = { size > 450000 }
+		}
+		bypass = {
+			OR = {
+				NOT = { country_exists = YUG }
+				any_other_country = {
+					is_in_faction_with = ROOT
+					YUG = {
+						is_puppet_of = PREV
+					}
+				}
+			}
+		}
+		x = 6
+		y = 3
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = { id = roman.14 }
+		}
+	}
+focus = {
+		id = REM_threaten_zog
+		prerequisite = { focus = REM_demand_yug }
+		icon = GFX_goal_generic_territory_or_war
+		available = {
+			is_puppet = no
+			NOT = { has_war_with = ALB }
+			NOT = { is_in_faction_with = ALB }
+		}
+		bypass = {
+			OR = {
+				NOT = { country_exists = ALB }
+				any_other_country = {
+					is_in_faction_with = ROOT
+					ALB = {
+						is_puppet_of = PREV
+					}
+				}
+			}
+		}
+		x = 6
+		y = 4
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = { id = roman.18 }
+		}
+	}
+focus = {
+		id = REM_invade_bul
+		prerequisite = { focus = REM_threaten_zog }
+		icon = GFX_goal_generic_territory_or_war
+		available = {
+			is_puppet = no
+			NOT = { has_war_with = BUL }
+			NOT = { is_in_faction_with = BUL }
+		}
+		bypass = {
+			OR = {
+				NOT = { country_exists = BUL }
+				any_other_country = {
+					is_in_faction_with = ROOT
+					BUL = {
+						is_puppet_of = PREV
+					}
+				}
+			}
+		}
+		x = 6
+		y = 5
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = { id = roman.22 }
+		}
+	}
+focus = {
+		id = REM_invade_gre
+		prerequisite = { focus = REM_invade_bul }
+		icon = GFX_goal_generic_territory_or_war
+		available = {
+			is_puppet = no
+			NOT = { has_war_with = GRE }
+			NOT = { is_in_faction_with = GRE }
+		}
+		bypass = {
+			OR = {
+				NOT = { country_exists = GRE }
+				any_other_country = {
+					is_in_faction_with = ROOT
+					GRE = {
+						is_puppet_of = PREV
+					}
+				}
+			}
+		}
+		x = 6
+		y = 6
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = { id = roman.26 }
+		}
+	}
+		
+focus = {
+		id = REM_invade_tur
+		prerequisite = { focus = REM_invade_gre }
+		icon = GFX_goal_generic_territory_or_war
+		available = {
+			is_puppet = no
+			NOT = { has_war_with = TUR }
+			NOT = { is_in_faction_with = TUR }
+		}
+		bypass = {
+			OR = {
+				NOT = { country_exists = TUR }
+				any_other_country = {
+					is_in_faction_with = ROOT
+					ROM = {
+						is_puppet_of = PREV
+					}
+				}
+			}
+		}
+		x = 8
+		y = 7
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = { id = roman.29 }
+		}
+	}
+focus = {
+		id = REM_leg_ref
+		icon = GFX_goal_generic_axis_build_infantry
+
+		x = 15
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 1
+			}
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = L_A
+			army_experience = 150
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.5
+				uses = 3
+				category = armor
+
+			}
+			add_tech_bonus = {
+				bonus = 0.4
+				uses = 4
+				name = mech_army_bonus
+				technology = infantry_weapons1
+				technology = support_weapons
+				technology = motorised_infantry
+			}
+		}
+}
+focus = {
+		id = REM_conscript_aux
+		icon = GFX_goal_generic_axis_build_infantry
+		prerequisite = { focus = REM_leg_ref }
+		x = 17
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = { is_puppet = no
+						date > 1937.1.1
+						has_manpower < 1000000
+
+		}
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = P_A
+
+			}
+
+
+	}
+focus = {
+		id = REM_mech
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = REM_leg_ref }
+		x = 15
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+
+			army_experience = 20
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 3
+				category = land_doctrine
+			}
+			add_tech_bonus = {
+				bonus = 0.4
+				uses = 1
+				name = mech_army_bonus
+
+				technology = improved_light_tank
+				technology = improved_heavy_tank
+				technology = mechanised_infantry
+			}
+
+		}
+	}
+focus = {
+		id = REM_armor
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = REM_mech }
+		mutually_exclusive = { focus = REM_inf }
+		x = 14
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+
+			army_experience = 20
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 4
+				category = land_doctrine
+			}
+			add_tech_bonus = {
+				bonus = 0.4
+				uses = 3
+				name = mech_army_bonus
+
+				technology = advanced_light_tank
+				technology = advanced_heavy_tank
+				technology = basic_medium_tank
+				technology = improved_medium_tank
+				technology = mechanised_infantry
+			}
+
+		}
+	}
+focus = {
+		id = REM_inf
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = REM_mech }
+		mutually_exclusive = { focus = REM_armor }
+		x = 16
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+
+			army_experience = 20
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 4
+				category = land_doctrine
+			}
+			add_tech_bonus = {
+				bonus = 0.4
+				uses = 3
+				name = mech_army_bonus
+
+				technology = infantry_weapons2
+				technology = infantry_weapons3
+				technology = mechanised_infantry2
+			}
+
+		}
+	}
+focus = {
+		id = REM_vol
+
+		icon = GFX_goal_generic_build_airforce
+		x = 15
+		y = 3
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+			air_experience = 25
+			add_tech_bonus = {
+				name = air_sup_bonus
+				bonus = 0.5
+				uses = 2
+				category = battlefield_support_tree
+			}
+			every_state = {
+
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			every_state = {
+
+				add_building_construction = {
+					type = air_base
+					level = 6
+					instant_build = yes
+				}
+			}
+			#custom_effect_tooltip = available_chief_of_airforce
+			#show_ideas_tooltip = ritter_von_greim
+		}
+
+		completion_reward = {
+
+			air_experience = 75
+
+			add_tech_bonus = {
+				name = air_sup_bonus
+				bonus = 0.5
+				uses = 2
+				category = battlefield_support_tree
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 6
+				technology = early_fighter
+				technology = cv_early_fighter
+				technology = fighter1
+				technology = early_bomber
+				technology = cv_fighter1
+
+				technology = CAS1
+				technology = cv_CAS1
+
+				technology = naval_bomber1
+				technology = cv_naval_bomber1
+
+
+
+			}
+
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							air_base > 3
+							air_base < 9
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = air_base
+							size > 5
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 6
+						instant_build = yes
+					}
+
+				}
+			}
+
+			random_owned_controlled_state = {
+				limit = {
+					air_base > 3
+					air_base < 9
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+
+			}
+			random_owned_controlled_state = {
+				limit = {
+					air_base > 3
+					air_base < 9
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+
+			}
+			random_owned_controlled_state = {
+				limit = {
+					air_base > 2
+					air_base < 9
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+
+			}
+			#custom_effect_tooltip = available_chief_of_airforce
+			#show_ideas_tooltip = ritter_von_greim
+		}
+	}
+focus = {
+		id = REM_air_ref
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = REM_vol }
+		x = 15
+		y = 4
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 3
+				category = air_doctrine
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 6
+
+
+				technology = fighter2
+
+				technology = cv_fighter2
+
+				technology = CAS2
+      				technology = cv_CAS2
+
+				technology = naval_bomber2
+				technology = cv_naval_bomber2
+
+
+			}
+
+		}
+	}
+focus = {
+		id = REM_strat
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = REM_air_ref }
+		mutually_exclusive = { focus = REM_tac }
+		x = 16
+		y = 5
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+
+			air_experience = 20
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 3
+				category = air_doctrine
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 6
+
+
+				technology = strategic_bomber1
+
+				technology = strategic_bomber2
+
+				technology = strategic_bomber3
+      				technology = jet_strategic_bomber1
+
+
+
+
+			}
+
+		}
+	}
+focus = {
+		id = REM_tac
+		icon = GFX_goal_poland_goal
+		prerequisite = { focus = REM_air_ref }
+		mutually_exclusive = { focus = REM_strat }
+		x = 14
+		y = 5
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+
+			air_experience = 20
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 3
+				category = air_doctrine
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 6
+
+
+				technology = tactical_bomber1
+
+				technology = tactical_bomber2
+
+				technology = tactical_bomber3
+      				technology = jet_tactical_bomber1
+
+				technology = jet_tactical_bomber2
+
+
+
+			}
+
+		}
+	}
+	focus = {
+		id = REM_eqt
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = REM_leg_ref }
+
+		x = 19
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		REM = {
+			
+			country_event = { id = roman.32 }
+			}
+		}
+	}
+	focus = {
+		id = REM_corsica_conference
+		
+		icon = GFX_goal_generic_neutrality_focus
+		prerequisite = { focus = REM_seize_suez}
+		x = 8
+		y = 3
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+	
+		available_if_capitulated = yes
+		available = {
+		date > 1936.8.1
+		}
+		completion_reward = {
+			REM = {
+			add_political_power = 125
+			country_event = { id = roman.43 }
+			}
+		}
+	}
+
+
+focus = {
+		id = REM_naval_buildup
+		icon = GFX_goal_generic_build_navy
+		prerequisite = {focus = REM_naval_battleships focus = REM_naval_air_design }
+		x = 1
+		y = 3
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			navy_experience = 50
+			random_owned_controlled_state = {
+
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = dockyard
+					level = 4
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+
+
+					free_building_slots = {
+						building = dockyard
+						size = 4
+						include_locked = yes
+					}
+
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = dockyard
+					level = 4
+					instant_build = yes
+				}
+			}
+
+
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+						type = dockyard
+						level = 4
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+
+						free_building_slots = {
+							building = dockyard
+							size = 4
+							include_locked = yes
+						}
+
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+						type = dockyard
+						level = 4
+						instant_build = yes
+					}
+				}
+			}
+
+			add_tech_bonus = {
+				name = naval_doctrine_bonus
+				bonus = 0.5
+				uses = 3
+				category = naval_doctrine
+			}
+		}
+
+
+}

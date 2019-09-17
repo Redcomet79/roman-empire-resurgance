@@ -1,0 +1,313 @@
+division_template = {
+	name = "Cohors Peditum"
+	
+	division_names_group = REM_Inf_01
+	
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+        	infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+        	infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+
+	support = {
+					recon = {x = 0 y = 0}
+					
+	}
+}
+division_template = {
+	name = "Cohors Armatae Plaustrum"
+
+	division_names_group = REM_Arm_01
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+        	light_armor = { x = 1 y = 0 }
+		light_armor = { x = 1 y = 1 }
+		motorized = { x = 2 y = 0 }
+        	motorized = { x = 2 y = 1 }
+	}
+	support = {
+        recon = { x = 0 y = 0 }
+				
+	}
+}
+division_template = {
+	name = "Cohors Praetoria"
+
+	division_names_group = REM_MOT_01
+	regiments = {
+		motorized = { x = 0 y = 0 }
+	    	motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		motorized = { x = 2 y = 0 }
+	    	motorized = { x = 2 y = 1 }
+		motorized = { x = 2 y = 2 }
+	}
+	support = {
+        recon = { x = 0 y = 0 }
+				
+	}
+	priority = 1
+}
+division_template = {
+	name = "Cohors Monticola"
+
+	division_names_group = REM_MNT_01
+	regiments = {
+		mountaineers = { x = 0 y = 0 }
+	    	mountaineers = { x = 0 y = 1 }
+		mountaineers = { x = 0 y = 2 }
+		mountaineers = { x = 1 y = 0 }
+		mountaineers = { x = 1 y = 1 }
+		mountaineers = { x = 1 y = 2 }
+	}
+	support = {
+        recon = { x = 0 y = 0 }
+				
+	}
+}
+division_template = {
+	name = "Cohors Equites"
+
+	division_names_group = REM_Cav_01
+		regiments = {
+		cavalry = { x = 0 y = 0 }
+        	cavalry = { x = 0 y = 1 }
+        	cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+	}
+	support = {
+	    recon = { x = 0 y = 0 }
+
+	}
+}
+units = {
+
+division= {
+  name = "I. Cohors Peditum Triarius 'Sons Of Mars'"
+  location = 11969
+  division_template = "Cohors Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "II. Cohors Peditum Triarius 'Hades'"
+  location = 11969
+  division_template = "Cohors Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "III. Cohors Peditum Triarius 'Jupiter's Own'"
+  location = 1149
+  division_template = "Cohors Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "IV. Cohors Peditum Evocatus 'Roma'"
+  location = 1149
+  division_template = "Cohors Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "V. Cohors Peditum Evocatus 'Imperio'"
+  location = 10074
+  division_template = "Cohors Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "VI. Cohors Peditum Evocatus"
+  location = 10074
+  division_template = "Cohors Peditum "
+  start_experience_factor = 0.3
+}
+division= {
+  name = "VII. Cohors Peditum Triarius"
+  location = 10074
+  division_template = "Cohors Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "VIII. Cohors Peditum"
+  location = 10074
+  division_template = "Cohors Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "IX. Cohors Peditum"
+  location = 9904
+  division_template = "Cohors Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "X. Cohors Peditum"
+  location = 9904
+  division_template = "Cohors Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "XI. Cohors Peditum"
+  location = 9904
+  division_template = "Cohors Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "XII. Cohors Peditum"
+  location = 9904
+  division_template = "Cohors Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "XIII. Cohors Peditum"
+  location = 11773
+  division_template = "Cohors Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "XIV. Cohors Peditum"
+  location = 11773
+  division_template = "Cohors Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "XV. Cohors Peditum"
+  location = 11773
+  division_template = "Cohors Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "XVI. Cohors Peditum"
+  location = 11773
+  division_template = "Cohors Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "XVII. Cohors Peditum"
+  location = 11773
+  division_template = "Cohors Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "XVIII. Cohors Peditum"
+  location = 11773
+  division_template = "Cohors Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "XIX. Cohors Peditum"
+  location = 11773
+  division_template = "Cohors Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "XX. Cohors Peditum"
+  location = 11773
+  division_template = "Cohors Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "XXI. Cohors Peditum"
+  location = 11969
+  division_template = "Cohors Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "XXII. Cohors Peditum"
+  location = 1149
+  division_template = "Cohors Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "XXIII. Cohors Peditum"
+  location = 11969
+  division_template = "Cohors Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "XXIV. Cohors Peditum"
+  location = 1149
+  division_template = "Cohors Peditum"
+  start_experience_factor = 0.3
+}
+division= {
+  name = "I. Cohors Praetoria 'Mars' Children'"
+  location = 1149
+  division_template = "Cohors Praetoria"
+  start_experience_factor = 1
+}
+division= {
+  name = "II. Cohors Praetoria"
+  location = 1149
+  division_template = "Cohors Praetoria"
+  start_experience_factor = 1
+}
+division= {
+  name = "III. Cohors Praetoria"
+  location = 1149
+  division_template = "Cohors Praetoria"
+  start_experience_factor = 1
+}
+division= {
+  name = "IV. Cohors Praetoria 'Jupiter's Eagles'"
+  location = 1149
+  division_template = "Cohors Praetoria"
+  start_experience_factor = 1
+}
+division= {
+  name = "V. Cohors Praetoria"
+  location = 1149
+  division_template = "Cohors Praetoria"
+  start_experience_factor = 1
+}
+division= {
+  name = "VI. Cohors Praetoria"
+  location = 1149
+  division_template = "Cohors Praetoria"
+  start_experience_factor = 1
+}
+
+}
+#########################
+## STARTING PRODUCTION ##
+#########################
+instant_effect = {
+		
+	add_equipment_production = {
+		equipment = {
+			type = basic_infantry_equipment
+			creator = "REM"
+		}
+		requested_factories = 8
+		progress = 0.1
+		efficiency = 100
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "REM" 
+		}
+		requested_factories = 8
+		progress = 0.3
+		efficiency = 100
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = artillery_equipment_1
+			creator = "REM" 
+		}
+		requested_factories = 4
+		progress = 0.3
+		efficiency = 100
+	}
+
+}
+#####################

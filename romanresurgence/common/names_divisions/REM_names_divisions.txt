@@ -1,0 +1,287 @@
+# Division template historical names system. Is a new method of naming the divisions based on the names-group assigned to it's template.
+# If we run out of all historical names, the names will be assigned in the old way.
+#
+# Each group has a made up tag. Use it if you want to append more, or replace existing names with the extra txt files (modding).
+#
+# for_countries - lists all countries that can use it. If empty, or entire tag is missing, all countries in the world can use it.
+#
+# can_use - is a trigger that locks/unlocks the group under specific circumstances. The trigger is in a country scope.
+#
+# division_types - is a list of tokens to corresponding unit types. A player can in fact use any group of names for a div.template
+#                  however this tag is a helper for an automated choice (for AI, or if the group must switch on it's own, because
+#                  for example the current one is no longer available due to the can_use trigger saying so).
+#                  In automated choice, the division template must have at least 1 of the following types for it to be chosen.
+#
+# fallback_name - Is going to be used if we run out of the scripted historical names. If you want to use the old division naming
+#                 mechanics to be used for fallbacks, then just skip this option.
+#
+# unordered - It's a list of historical division names that did not have a number. Regardless if such names happened in history or not
+#             this option is available here mainly for a mods.
+#
+# ordered - Is a list of all historical names. 
+#           Numbers must start from 1 and up. 
+#           Numbers can't repeat in one scope.
+#           If you script the name for this group, at the same number (for example in a mod in another file), the name will be override.
+#           All arguments between the brackets must be separated by spaces. Each argument is wrapped in "quotas".
+#           1st argument = The name. It must contain either: 
+#                          %d (for decimal number placement)
+#                          %s (for string number placement - ROMAN numbers like XIV).
+#           2nd argument is optional = A localizable text describing this historical division. The text will be visible in the tooltip
+#                                      where you choose the historical division name.
+#           3rd argument is optional = An URL preferably pointing to the WIKI. It's a future feature that is not currently working in
+#                                      the current game version.
+
+REM_Inf_01 = 
+{
+	name = "Infantry Cohorts"
+
+	for_countries = { REM }
+
+	can_use = { always = yes }
+
+	division_types = { "Infantry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { GER_Gar_01 }
+
+	fallback_name = "%s. Cohors Peditum"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%s. Cohors Peditum Triarius 'Sons Of Mars'" }
+		2 = { "%s. Cohors Peditum Triarius 'Hades'" }
+		3 = { "%s. Cohors Peditum Triarius 'Jupiter's Own'" }
+		4 = { "%s. Cohors Peditum Evocatus 'Roma'" }
+		5 = { "%s. Cohors Peditum Evocatus 'Imperio'" }
+		6 = { "%s. Cohors Peditum Evocatus" }
+		7 = { "%s. Cohors Peditum Triarius" }
+		22 = { "%s. Cohors Peditum Evocatus" }
+		27 = { "%s. Cohors Peditum Evocatus" }
+		86 = { "%s. Cohors Peditum Evocatus" }
+		223 = { "%s. Cohors Peditum Triarius" }
+		268 = { "%s. Cohors Peditum Evocatus" }
+		60 = { "%s. Cohors Peditum Evocatus" }
+		337 = { "%s. Cohors Peditum Triarius" }
+		99 = { "%s.  Cohors Peditum Evocatus" }
+		97 = { "%s.  Cohors Peditum Evocatus" }
+		101 = { "%s. Cohors Peditum Evocatus" }
+		384 = { "%s. Cohors Peditum Evocatus" }
+		371 = { "%s. Cohors Peditum Triarius" }
+		346 = { "%s. Cohors Peditum Triarius" }
+		356 = { "%s. Cohors Peditum Triarius" }
+		243 = { "%s. Cohors Peditum Triarius" }
+		244 = { "%s. Cohors Peditum Triarius" }
+		362 = { "%s. Cohors Peditum Triarius" }
+		275 = { "%s. Cohors Peditum Triarius" }
+		349 = { "%s. Cohors Peditum Triarius" }
+		91 = { "%s. Cohors Peditum Triarius" }
+		92 = { "%s. Cohors Peditum Evocatus" }
+		47 = { "%s. Cohors Peditum Evocatus" }
+		48 = { "%s. Cohors Peditum Evocatus" }
+		49 = { "%s. Cohors Peditum Evocatus" }
+		84 = { "%s. Cohors Peditum Evocatus" }
+		85 = { "%s. Cohors Peditum Evocatus" }
+		237 = { "%s. Cohors Peditum Evocatus" }
+		59 = { "%s. Cohors Peditum Evocatus" }
+		64 = { "%s. Cohors Peditum Evocatus" }
+		226 = { "%s. Cohors Peditum Evocatus" }
+		232 = { "%s. Cohors Peditum Evocatus" }
+		
+		}
+}
+
+
+
+
+REM_MNT_01 = 
+{
+	name = "Cohors Monticola"
+
+	for_countries = { REM }
+
+	can_use = { always = yes }
+
+	division_types = { "Mountaineers"  }
+
+	fallback_name = "%s. Cohors Monticola"
+
+	# Names with numbers (only one number per entry)
+	ordered =
+	{
+	    1 = { "%s. Cohors Monticola Triarius 'Etna'" }
+		2 = { "%s. Cohors Monticola Triarius 'Olympus'" }
+		3 = { "%s. Cohors Monticola Triarius 'Alpinae'" }
+		4 = { "%s. Cohors Monticola Triarius" }
+		15 = { "%s. Cohors Monticola Triarius" }
+	}
+}
+
+
+REM_MOT_01 = 
+{
+	name = "Cohors Praetoria"
+
+	for_countries = { REM }
+
+	division_types = { "motorized"  }
+
+	fallback_name = "%s. Cohors Praetoria"
+
+
+	# Names with numbers (only one number per entry)
+	ordered =
+	{
+		1 = { "%s. Cohors Praetoria 'Emperor's Fist'" }
+		2 = { "%s. Cohors Praetoria 'Roma'" }
+		3 = { "%s. Cohors Praetoria 'Magnus'" }
+		4 = { "%s. Cohors Praetoria 'Invidium'" }
+		5 = { "%s. Cohors Praetoria 'Liveo'" }
+		6 = { "%s. Cohors Praetoria 'Odium'" }
+		7 = { "%s. Cohors Praetoria 'Simultus'" }
+		8 = { "%s. Cohors Praetoria 'Perfodio'" }
+		9 = { "%s. Cohors Praetoria 'Interficio'" }
+		10 = { "%s. Cohors Praetoria 'Ante!'" }
+	}
+}
+
+REM_MEC_01 = 
+{
+	name = "Cohors Catafractarius"
+
+	for_countries = { REM }
+
+	can_use = { always = yes }
+
+	division_types = { "mechanized"  }
+
+	fallback_name = "%s. Cohors Catafractarius"
+
+
+	# Names with numbers (only one number per entry)
+	ordered =
+	{
+		1 = { "%s. Cohors Catafractarius 'Incissus'" }
+		2 = { "%s. Cohors Catafractarius 'Impulsum'" }
+		3 = { "%s. Cohors Catafractarius 'Colissio" }
+		4 = { "%s. Cohors Catafractarius 'Quassatio'" }
+		5 = { "%s. Cohors Catafractarius 'Tragula'" }
+		6 = { "%s. Cohors Catafractarius 'Occilio'" }
+		7 = { "%s. Cohors Catafractarius 'Perfringo'" }
+		8 = { "%s. Cohors Catafractarius  'Propulso'" }
+		9 = { "%s. Cohors Catafractarius 'Castigo'" }
+		10 = { "%s. Cohors Catafractarius 'Caestus'" }
+
+	}
+}
+
+
+REM_MAR_01 = 
+{
+	name = "Cohors Marinus"
+
+	for_countries = { REM }
+
+	can_use = { always = yes }
+
+	division_types = { "marine"  }
+
+	fallback_name = "%s. Cohors Marinus"
+
+	# Names with numbers (only one number per entry)
+	ordered =
+	{
+		1 = { "%s. Cohors Marinus 'Neptune'" }
+		2 = { "%s. Cohors Marinus 'Maris Anguis'" }
+		3 = { "%s. Cohors Marinus 'Sirenia'" }
+		4 = { "%s. Cohors Marinus 'Nautlius'" }
+		5 = { "%s. Cohors Marinus 'Polyphus'" }
+		6 = { "%s. Cohors Marinus 'Litoribus'" }
+		
+		}
+}
+
+REM_PAR_01 = 
+{
+	name = "Cohors Caelum Caderus"
+
+	for_countries = { REM }
+
+	can_use = { always = yes }
+
+	division_types = { "paratrooper"  }
+
+	fallback_name = "%s. Cohors Caelum Caderus"
+
+	# Names with numbers (only one number per entry)
+	ordered =
+	{
+		1 = { "%s. Cohors Caelum Caderus 'Casurus'" }
+		2 = { "%s. Cohors Caelum Caderus 'Autumnus'" }
+		3 = { "%s. Cohors Caelum Caderus 'Lapsus'" }
+		4 = { "%s. Cohors Caelum Caderus 'Salirus'" }
+		5 = { "%s. Cohors Caelum Caderus 'Assulto'" }
+		6 = { "%s. Cohors Caelum Caderus" }
+		7 = { "%s. Cohors Caelum Caderus" }
+		8 = { "%s. Cohors Caelum Caderus" }
+		9 = { "%s. Cohors Caelum Caderus" }
+		10 = { "%s. Cohors Caelum Caderus" }
+		11 = { "%s. Cohors Caelum Caderus" }
+		20 = { "%s. Cohors Caelum Caderus" }
+		
+		}
+}
+
+
+
+
+REM_Arm_01 = 
+{
+	name = "Cohors Armatae Plaustrum"
+
+	for_countries = { REM }
+
+	can_use = { always = yes }
+
+	division_types = { "light_armor" "medium_armor" "heavy_armor" "modern_armor" }
+
+	fallback_name = "%s. Cohors Armatae Plaustrum"
+
+	# Names with numbers (only one number per entry)
+	ordered =
+	{
+		1 = { "%s. Cohors Armatae Plaustrum Triarius 'Ruina'" }
+		2 = { "%s. Cohors Armatae Plaustrum  Evocatus 'Extitum'" }
+		3 = { "%s. Cohors Armatae Plaustrum 'Interitus'" }
+		4 = { "%s. Cohors Armatae Plaustrum 'Subversio'" }
+		5 = { "%s. Cohors Armatae Plaustrum 'Pernicies'" }
+		
+	
+
+	}
+}
+
+REM_Cav_01 = 
+{
+	name = "Cohors Equites"
+
+	for_countries = { REM }
+
+	can_use = { always = yes }
+
+	division_types = { "cavalry"  }
+
+	fallback_name = "%s. Cohors Equites"
+
+	# Names with numbers (only one number per entry)
+	ordered =
+	{
+		1 = { "%s. Cohors Equites 'Draconarius" }
+		2 = { "%s. Cohors Equites" }
+		3 = { "%s. Cohors Equites" }
+		4 = { "%s. Cohors Equites" }
+
+	}
+	
+}
